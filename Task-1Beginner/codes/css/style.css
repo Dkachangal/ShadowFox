@@ -1,0 +1,160 @@
+/* --- 1. UNIVERSAL RESET --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', sans-serif; 
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; 
+    background-color: #000;
+}
+
+/* --- 2. NAVBAR --- */
+.navbar {
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 1000;
+    display: flex; 
+    flex-direction: row-reverse; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 2vh 4vw; 
+}
+
+.logo { 
+    font-size: 1rem; 
+    font-weight: 900; 
+    background: #ffffff; 
+    color: #515151; 
+    padding: 0.5rem 1.2rem; 
+    border-radius: 50px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links button {
+    background: none; 
+    border: none; 
+    color: #2d2d2d; 
+    cursor: pointer;
+    font-weight: 700; 
+    margin-right: 2rem; 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    letter-spacing: 0.1rem; 
+}
+
+/* --- 3. DESKTOP ENGINE (>= 1300px) --- */
+@media (min-width: 1300px) {
+
+    .main {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        overflow: hidden;
+    }
+
+    .side {
+        position: absolute;
+        width: 60%; 
+        height: 100%;
+        overflow: hidden;
+        transition: transform 0.85s cubic-bezier(0.8, 0, 0.2, 1);
+    }
+
+    .left-side {
+        left: 0;
+        z-index: 1;
+        background: #ffffff;
+        clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    }
+
+    .right-side {
+        right: 0;
+        z-index: 2;
+        background: #515151;
+        clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .panel-wrapper {
+        height: 600vh;
+        width: 100%;
+        transition: transform 0.85s cubic-bezier(0.8, 0, 0.2, 1);
+    }
+
+    section {
+        height: 100vh;
+        width: 100%;
+        position: relative; /* Anchor for absolute content */
+    }
+
+    /* --- THE HERO IMAGE FIX --- */
+    /* Target the .content div inside your home-left-section */
+    .home-left-section .content {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50vw; /* Keeps the container from expanding under the gray slant */
+        height: 100vh;
+        display: flex;
+        /* align-items: flex-end; */
+         /* Align image to bottom */
+        justify-content: flex-start; /* Align image to left */
+        padding-left: 6vw; /* This is your 'nudge' from the edge */
+    }
+
+    .img-container {
+        line-height: 0; /* Removes tiny gap at bottom */
+
+        align-items: self-end;
+    }
+    .content { display: flex; align-items: flex-end; }
+
+    .hero-img {
+        display: block;
+        max-width: 100%;
+        height: 92vh;
+        width: auto;
+        object-fit: contain;
+    }
+
+    /* Target the Text content on the right side */
+    .right-side .content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 20%; /* Pushes text away from the slant */
+    }
+
+    /* Colors & Typography */
+    .bg-white { background-color: white; color: black; }
+    .bg-gray { background-color: #515151; color: #c9c9c9; }
+
+    h1 { font-size: 5rem; font-weight: 900; line-height: 0.9; margin: 0; }
+    #Hi-I-am { font-size: 1.5rem; font-weight: 400; opacity: 0.8; margin-bottom: 10px; }
+
+    
+    .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* --- 4. MOBILE ENGINE (< 1300px) --- */
+@media (max-width: 1299px) {
+    html, body { overflow-y: auto; height: auto; position: relative; }
+    .right-side { display: none; }
+    .left-side { width: 100%; clip-path: none; }
+    .panel-wrapper { height: auto; transform: none !important; }
+    section { min-height: 100vh; padding: 100px 20px; display: flex; flex-direction: column; }
+    .hero-img { width: 100%; height: auto; }
+    h1 { font-size: 3rem; }
+}

@@ -1,0 +1,190 @@
+/* --- 1. UNIVERSAL RESET --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+/* Hard lock the viewport to prevent the "black gap" glitch */
+html, body { 
+    height: 100vh; 
+    width: 100vw; 
+    background: #000; 
+    overflow: hidden; 
+}
+
+/* --- 2. NAVBAR --- */
+.navbar {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    display: flex; justify-content: space-between; padding: 25px 50px;
+    mix-blend-mode: difference; color: white;
+}
+.logo { font-weight: 900; font-size: 24px; }
+.nav-links button {
+    background: none; border: none; color: inherit; cursor: pointer;
+    font-weight: 700; margin-left: 30px; text-transform: uppercase; font-size: 13px;
+}
+
+/* --- 3. DESKTOP ENGINE (>= 1300px) --- */
+@media (min-width: 1300px) {
+    .viewer { position: relative; width: 100vw; height: 100vh; display: flex; }
+    
+    .side {
+        position: absolute; width: 60%; height: 100%;
+        transition: transform 0.85s cubic-bezier(0.8, 0, 0.2, 1);
+    }
+    
+    /* Perfect Slant Logic */
+    .left-side { left: 0; z-index: 2; clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%); }
+    .right-side { right: 0; z-index: 1; clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%); }
+
+    .panel-wrapper { height: 400vh; transition: transform 0.85s cubic-bezier(0.8, 0, 0.2, 1); }
+    
+    section { 
+        height: 100vh; 
+        width: 100%; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        position: relative; 
+    }
+    
+    .bg-charcoal { background: #2d2d2d; color: white; }
+    .bg-white { background: #ffffff; color: #2d2d2d; }
+
+    /* --- THE PIN-TO-FLOOR FIX --- */
+    /* Only target the Home section (1st on left) */
+    .left-side section:first-child { 
+        align-items: flex-end; 
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    .left-side section:first-child .content {
+        height: 100%; width: 100%;
+        display: flex;
+        align-items: flex-end; /* Bottom pin */
+        padding-left: 5vw;     /* Nudge from edge */
+    }
+
+    .img-container {
+        line-height: 0; /* Kills the 4px bottom gap */
+        display: block;
+    }
+
+    .hero-img {
+        display: block;
+        height: 90vh; /* Adjust height here */
+        width: auto;
+        object-fit: contain;
+    }
+
+    /* --- RIGHT SIDE TEXT ALIGNMENT --- */
+    /* Target the Name section (Last on right) */
+    .right-side section:last-child .content {
+        text-align: left;
+        width: 100%;
+        padding-left: 20%; /* Pushes text away from the slant line */
+    }
+
+    h1 { font-size: 5.5rem; font-weight: 900; line-height: 0.9; }
+    h2 { font-size: 4rem; font-weight: 900; }
+    .tagline { font-size: 1.5rem; font-weight: 400; display: block; margin-bottom: 10px; opacity: 0.7; }
+
+    .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* --- 4. MOBILE ENGINE (< 1300px) --- */
+/* @media (max-width: 1299px) {
+    body { overflow-y: auto; }
+    .right-side, .viewer { display: block; }
+    .side { width: 100%; position: relative; clip-path: none; }
+    .panel-wrapper { transform: none !important; }
+    section { min-height: 100vh; padding: 100px 30px; flex-direction: column; text-align: center; }
+    .hero-img { width: 100%; height: auto; }
+    h1 { font-size: 3.5rem; }
+    .menu-toggle { display: block; font-size: 28px; cursor: pointer; color: white; mix-blend-mode: difference; }
+    .nav-links { display: none; } /* Standard hidden mobile menu 
+} */
+
+
+
+/* --- 4. ENHANCED MOBILE ENGINE (< 1300px) --- */
+/* --- 4. CLEAN MOBILE ENGINE (< 1300px) --- */
+/* --- 4. CLEAN MOBILE ENGINE (No Image) --- */
+@media (max-width: 1299px) {
+    body { 
+        overflow-y: auto; 
+        background: #2d2d2d; /* Set dark background as base */
+    }
+
+    .viewer { 
+        display: flex; 
+        flex-direction: column-reverse; /* This flips the order so your NAME shows first */
+    }
+
+    .side { 
+        width: 100%; 
+        position: relative; 
+        clip-path: none !important; 
+        height: auto; 
+    }
+
+    .panel-wrapper { 
+        height: auto !important; 
+        transform: none !important; 
+    }
+
+    /* --- HIDE THE IMAGE SECTION --- */
+    .left-side section:first-child {
+        display: none !important; 
+    }
+
+    /* Standard Section Styling */
+    section { 
+        min-height: 60vh; 
+        padding: 80px 30px; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        text-align: center; 
+    }
+
+    .bg-charcoal { background: #2d2d2d; color: white; }
+    .bg-white { background: #ffffff; color: #2d2d2d; }
+
+    /* --- HERO TEXT (Your Name) --- */
+    .right-side section:last-child {
+        min-height: 100vh; /* Make the Name section full screen */
+        background: #2d2d2d;
+        color: white;
+    }
+
+    h1 { 
+        font-size: 3.5rem; 
+        line-height: 1; 
+        margin: 15px 0; 
+        font-weight: 900;
+    }
+
+    .tagline { 
+        font-size: 1.1rem; 
+        text-transform: uppercase; 
+        letter-spacing: 3px; 
+        opacity: 0.7; 
+    }
+
+    /* Navbar Fix */
+    .navbar {
+        padding: 20px;
+        background: rgba(0,0,0,0.8);
+        backdrop-filter: blur(10px);
+        mix-blend-mode: normal;
+    }
+
+    .nav-links { display: none; } /* Standard behavior for mobile toggle */
+    
+    .menu-toggle { 
+        display: block; 
+        font-size: 28px; 
+        cursor: pointer; 
+        color: white;
+    }
+}
