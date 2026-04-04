@@ -20,11 +20,7 @@ h1, h2, h3 {
 body { background: #000; overflow-x: hidden; }
 
 /* --- NAVBAR --- */
-/* .navbar {
-    position: fixed; top: 0; width: 100%; z-index: 1000;
-    display: flex; justify-content: space-between; padding: 25px 50px;
-    mix-blend-mode: difference; color: #c9c9c9;
-} */
+.logo { font-weight: 900; font-size: 24px; font-family: "Fugaz One", serif; color: #c9c9c9;}
 
 .navbar {
     position: fixed; 
@@ -32,15 +28,14 @@ body { background: #000; overflow-x: hidden; }
     width: 100%; 
     z-index: 1000;
     display: flex; 
-    /* flex-direction: row-reverse;  */
     justify-content: space-between; 
     align-items: center;
-    padding: 2vh 4vw; 
+    padding: 2vh; 
 }
-.logo { font-weight: 900; font-size: 24px; font-family: "Fugaz One", serif; color: #c9c9c9;}
+
 .nav-links button {
     background: none; border: none; color: inherit; cursor: pointer;
-    font-weight: 700; margin-left: 30px; text-transform: uppercase; font-size: 13px;
+    font-weight: 700; margin-left: 0.5rem; text-transform: uppercase; font-size: 13px;
     color: #515151;
 }
 
@@ -73,7 +68,7 @@ body { background: #000; overflow-x: hidden; }
     .left-side { left: 0; z-index: 2; clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%); }
     .right-side { right: 0; z-index: 1; clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%); }
 
-    .panel-wrapper { height: 400vh; transition: transform 0.85s cubic-bezier(0.8, 0, 0.2, 1); }
+    .panel-wrapper { height: 500vh; transition: transform 0.85s cubic-bezier(0.8, 0, 0.2, 1); }
     section { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 15%; }
     
     .bg-charcoal { background: #515151; color: #c9c9c9; }
@@ -91,7 +86,7 @@ body { background: #000; overflow-x: hidden; }
     }
     #Hi-I-am {
         font-family: "Playfair Display", serif;
-        font-size: 1.95rem;
+        font-size: 2.1rem;
         font-weight: 600;
         opacity: 0.8;
         margin-bottom: 10px;
@@ -104,7 +99,7 @@ body { background: #000; overflow-x: hidden; }
         margin-top: 5%;
         font-weight: 600;
         opacity: 0.8;
-        margin-bottom: 5.8rem;
+        margin-bottom: 6.1rem;
         text-align: left;
         font-size: 3rem;
     }
