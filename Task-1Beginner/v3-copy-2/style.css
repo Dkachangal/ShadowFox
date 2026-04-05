@@ -478,6 +478,7 @@ body {
     /* PROJECT SECTION-------------------------------------------------------------- */
     /* --- PROJECT SECTION STYLES --- */
     .p-num {
+        text-align: left;
         font-size: 0.8vw;
         color: #c9c9c9;
         opacity: 0.5;
@@ -486,6 +487,7 @@ body {
     }
 
     .p-main-title {
+        text-align: left;
         font-size: 4vw;
         margin: 1.5vh 0;
         line-height: 0.9;

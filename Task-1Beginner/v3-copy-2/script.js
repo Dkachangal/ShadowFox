@@ -71,21 +71,21 @@ if (windowWidth >= 1100) {
     const projectData = [
         {
             title: "Vision-Based Virtual UI",
-            desc: "Real-time hand tracking using MediaPipe and OpenCV. This system detects index finger coordinates to interact with virtual UI elements with zero latency.",
+            desc: "Real-time hand tracking using MediaPipe and OpenCV. This system detects index finger coordinates to interact with virtual UI elements with zero latency",
             tags: ["Python", "OpenCV", "MediaPipe"],
             num: "01 / 03",
             link: "https://github.com/Dkachangal/AI-ML-with-Python"
         },
         {
             title: "Synthetic Script Generator",
-            desc: "An image processing tool that converts digital text into realistic handwriting using KivyMD. Employs character-spacing algorithms to mimic human script.",
+            desc: "An image processing tool that converts digital text into realistic handwriting using KivyMD. Employs character-spacing algorithms to mimic human script",
             tags: ["Python", "KivyMD", "Pillow"],
             num: "02 / 03",
             link: "https://github.com/Dkachangal/Text-To-Handwriting"
         },
         {
             title: "Real-time FX Dashboard",
-            desc: "A modular currency converter built with JS. Features asynchronous API fetching and a responsive interface.",
+            desc: "A modular currency converter built with JS. Features asynchronous API fetching and a responsive interface",
             tags: ["JS", "CSS", "API"],
             num: "03 / 03",
             link: "https://github.com/Dkachangal/CurrencyConvertor",
