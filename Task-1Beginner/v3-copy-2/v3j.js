@@ -88,7 +88,7 @@ if (windowWidth >= 1100) {
             desc: "A modular currency converter built with JS. Features asynchronous API fetching and a responsive interface.",
             tags: ["JS", "CSS", "API"],
             num: "03 / 03",
-            link: "https://divyanshk-currency-converter.netlify.app/"
+            link: "https://github.com/Dkachangal/CurrencyConvertor",
         }
     ];
 
