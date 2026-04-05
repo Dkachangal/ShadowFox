@@ -684,105 +684,313 @@ body {
 
     /* EXPERIENCE SECTION --------------------------------------------------------- */
     /* --- EXPERIENCE: LEFT TEXT --- */
-/* --- EXPERIENCE: SHARED LAYOUT --- */
-#experience-info-block { 
-    text-align: left; padding-right: 4vw; 
-    transition: opacity 0.4s ease, transform 0.4s ease; 
+    /* --- EXPERIENCE: SHARED LAYOUT --- */
+    #experience-info-block {
+        text-align: left;
+        padding-right: 4vw;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .exp-counter {
+        font-size: 0.8vw;
+        color: #515151;
+        opacity: 0.5;
+        font-weight: 700;
+    }
+
+    .exp-headline {
+        font-size: 4.5vw;
+        line-height: 0.9;
+        margin: 2vh 0;
+        color: #515151;
+        font-family: "Playfair Display", serif;
+        font-weight: 900;
+    }
+
+    #exp-summary {
+        font-size: 1.1vw;
+        max-width: 25vw;
+        line-height: 1.6;
+        color: #515151;
+        opacity: 0.8;
+        min-height: 12vh;
+        transition: opacity 0.4s ease;
+    }
+
+    /* --- RIGHT SIDE: GALLERY ENGINE --- */
+    .gallery-engine {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5vh;
+        width: 32vw;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10vw;
+    }
+
+    .main-display {
+        position: relative;
+        width: 100%;
+        height: 42vh;
+        border-radius: 1vw;
+        overflow: hidden;
+        background: #111;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #main-exp-img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        transition: opacity 0.5s ease;
+    }
+
+    /* Year Tag Overlay */
+    .display-overlay {
+        position: absolute;
+        top: 1.2vw;
+        right: 1.2vw;
+        z-index: 20;
+    }
+
+    #display-tag {
+        background: #fff;
+        color: #1a1a1a;
+        padding: 0.5vw 1.2vw;
+        font-size: 0.8vw;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        border-radius: 2px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    /* --- NAVIGATION OVERLAYS (PIPS & ARROWS) --- */
+    .nav-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1vw;
+        z-index: 15;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    .main-display:hover .nav-overlay {
+        opacity: 1;
+    }
+
+    .nav-arrow {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: #fff;
+        font-size: 2vw;
+        width: 3vw;
+        height: 3vw;
+        border-radius: 50%;
+        cursor: pointer;
+        backdrop-filter: blur(5px);
+        transition: 0.3s;
+    }
+
+    .nav-arrow:hover {
+        background: #fff;
+        color: #1a1a1a;
+    }
+
+    .nav-dots {
+        position: absolute;
+        bottom: 1.2vw;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.6vw;
+    }
+
+    .dot {
+        width: 0.5vw;
+        height: 0.5vw;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transition: all 0.4s ease;
+    }
+
+    .dot.active {
+        background: #fff;
+        width: 1.2vw;
+        border-radius: 10px;
+    }
+
+    /* --- MILESTONE THUMBNAILS (BOTTOM BUTTONS) --- */
+    .thumb-strip {
+        display: flex;
+        gap: 1vw;
+        width: 100%;
+        height: 10vh;
+    }
+
+    .exp-thumb {
+        position: relative;
+        flex: 1;
+        background: #222;
+        border: none;
+        border-radius: 0.8vw;
+        overflow: hidden;
+        cursor: pointer;
+        opacity: 0.3;
+        filter: grayscale(100%);
+        transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .exp-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .exp-thumb.active {
+        opacity: 1;
+        filter: grayscale(0%);
+        transform: translateY(-5px);
+    }
+
+    .thumb-indicator {
+        position: absolute;
+        inset: 0;
+        border: 2px solid transparent;
+        transition: 0.3s;
+        z-index: 5;
+        pointer-events: none;
+    }
+
+    .exp-thumb.active .thumb-indicator {
+        border-color: #fff;
+    }
+
+    .yt-icon {
+        display: inline-block;
+        width: 1.2vw;
+        /* Scales with your 1920px baseline */
+        height: auto;
+        vertical-align: middle;
+        margin: 0 0.4vw;
+        /* Space between text and arrow */
+        filter: brightness(0) saturate(100%) invert(32%) sepia(0%) animate;
+        /* Matches your #515151 grey */
+        transition: transform 0.3s ease;
+    }
+
+    .p-btn:hover .yt-icon {
+        transform: scale(1.2);
+        filter: none;
+        /* Shows original YouTube colors on hover if desired */
+    }
+
+    /* ABOUT CONTACT------------------------------------------------------------------------------------------ */
+
+    /* --- ABOUT & CONTACT 2026 AESTHETIC --- */
+/* --- SECTION 05: ABOUT & CONTACT (DESKTOP) --- */
+
+/* --- SECTION 05: EDITORIAL CHARACTER LAYOUT --- */
+/* --- SECTION 05: EDITORIAL MINIMALIST LAYOUT --- */
+/* --- SECTION 05: EDITORIAL MINIMALIST LAYOUT (SCALED) --- */
+
+/* --- SECTION 05: WHITE STUDIO EDITORIAL LAYOUT --- */
+
+/* --- SECTION 05: WHITE STUDIO WITH GROUNDED STAGE --- */
+/* --- SCOPED FINAL SECTION ENGINE --- */
+
+/* Left Side Text Control */
+.contact-left-final .content {
+    padding-right: 45% !important; /* Prevents text from hitting the diagonal line */
+    text-align: left;
 }
 
-.exp-counter { font-size: 0.8vw; color: #515151; opacity: 0.5; font-weight: 700; }
-.exp-headline { 
-    font-size: 4.5vw; line-height: 0.9; margin: 2vh 0; 
-    color: #515151; font-family: "Playfair Display", serif; font-weight: 900; 
-}
-#exp-summary { 
-    font-size: 1.1vw; max-width: 25vw; line-height: 1.6; 
-    color: #515151; opacity: 0.8; min-height: 12vh; transition: opacity 0.4s ease;
+.final-btn-row {
+    display: flex;
+    gap: 1.5vw;
+    margin-top: 4vh;
 }
 
-/* --- RIGHT SIDE: GALLERY ENGINE --- */
-.gallery-engine { 
-    display: flex; flex-direction: column; gap: 2.5vh; 
-    width: 32vw; align-items: center; justify-content: center;
-    margin-left: 10vw; 
+.pill-btn {
+    background: #fff !important;
+    color: #515151 !important;
+    padding: 1vw 2.2vw !important;
+    border-radius: 5vw !important; 
+    font-size: 0.8vw;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none !important;
+    transition: all 0.3s ease;
 }
 
-.main-display {
-    position: relative; width: 100%; height: 42vh;
-    border-radius: 1vw; overflow: hidden; background: #111;
-    border: 1px solid rgba(255,255,255,0.1);
-    display: flex; align-items: center; justify-content: center;
+.pill-btn:hover {
+    background: #c9c9c9 !important;
+    transform: translateY(-0.5vh);
 }
 
-#main-exp-img {
-    max-width: 100%; max-height: 100%; width: auto; height: auto;
-    object-fit: contain; transition: opacity 0.5s ease;
+/* Right Side Visual Control */
+.contact-right-visual {
+    background-color: white !important;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    perspective: 120vh;
 }
 
-/* Year Tag Overlay */
-.display-overlay { position: absolute; top: 1.2vw; right: 1.2vw; z-index: 20; }
-#display-tag {
-    background: #fff; color: #1a1a1a; padding: 0.5vw 1.2vw;
-    font-size: 0.8vw; font-weight: 900; letter-spacing: 0.1em;
-    border-radius: 2px; box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+/* The Charcoal Disk (#515151) */
+.charcoal-disk {
+    position: absolute;
+    bottom: 3vh;
+    right: 5vw;
+    width: 40vw;
+    height: 15vh;
+    background: #515151; /* Your specific color branding */
+    border-radius: 50%;
+    transform: rotateX(75deg);
+    /* 3D Thickness and Shadow */
+    box-shadow: 0 1vh 0 #333, 0 3vh 5vh rgba(0,0,0,0.1);
+    z-index: 1;
 }
 
-/* --- NAVIGATION OVERLAYS (PIPS & ARROWS) --- */
-.nav-overlay {
-    position: absolute; inset: 0; display: flex; align-items: center;
-    justify-content: space-between; padding: 0 1vw; z-index: 15;
-    opacity: 0; transition: opacity 0.3s ease; background: rgba(0,0,0,0.1);
-}
-.main-display:hover .nav-overlay { opacity: 1; }
+/* The Cutout - Grounded on Disk */
+/* --- CENTER-GROUNDING FIX --- */
 
-.nav-arrow {
-    background: rgba(255,255,255,0.2); border: none; color: #fff;
-    font-size: 2vw; width: 3vw; height: 3vw; border-radius: 50%;
-    cursor: pointer; backdrop-filter: blur(5px); transition: 0.3s;
+.grounded-cutout {
+    height: 94vh;
+    width: auto;
+    object-fit: contain;
+    
+    /* Pushes you further RIGHT to hit the disk center */
+    margin-right: 6vw; 
+    
+    /* Nudges you DOWN to touch the surface perfectly */
+    margin-bottom: 3.8vh; 
+    
+    transform: scaleX(-1); /* Keeps you looking at your vision */
+    
+    /* SHARP CONTACT SHADOW: Darker and tighter for realism */
+    /* filter: drop-shadow(-0.2vw 0.1vh 0.2vh rgba(0,0,0,0.9)); */
+    
+    z-index: 1;
+    position: relative;
+    pointer-events: none;
 }
-.nav-arrow:hover { background: #fff; color: #1a1a1a; }
-
-.nav-dots {
-    position: absolute; bottom: 1.2vw; left: 50%;
-    transform: translateX(-50%); display: flex; gap: 0.6vw;
-}
-.dot {
-    width: 0.5vw; height: 0.5vw; background: rgba(255,255,255,0.3);
-    border-radius: 50%; transition: all 0.4s ease;
-}
-.dot.active { background: #fff; width: 1.2vw; border-radius: 10px; }
-
-/* --- MILESTONE THUMBNAILS (BOTTOM BUTTONS) --- */
-.thumb-strip { display: flex; gap: 1vw; width: 100%; height: 10vh; }
-.exp-thumb {
-    position: relative; flex: 1; background: #222; border: none;
-    border-radius: 0.8vw; overflow: hidden; cursor: pointer;
-    opacity: 0.3; filter: grayscale(100%); transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-.exp-thumb img { width: 100%; height: 100%; object-fit: cover; }
-.exp-thumb.active { opacity: 1; filter: grayscale(0%); transform: translateY(-5px); }
-
-.thumb-indicator {
-    position: absolute; inset: 0; border: 2px solid transparent;
-    transition: 0.3s; z-index: 5; pointer-events: none;
-}
-.exp-thumb.active .thumb-indicator { border-color: #fff; }
 }
 
-.yt-icon {
-    display: inline-block;
-    width: 1.2vw; /* Scales with your 1920px baseline */
-    height: auto;
-    vertical-align: middle;
-    margin: 0 0.4vw; /* Space between text and arrow */
-    filter: brightness(0) saturate(100%) invert(32%) sepia(0%) animate; /* Matches your #515151 grey */
-    transition: transform 0.3s ease;
-}
 
-.p-btn:hover .yt-icon {
-    transform: scale(1.2);
-    filter: none; /* Shows original YouTube colors on hover if desired */
-}
 
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------- */

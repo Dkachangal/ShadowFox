@@ -143,12 +143,12 @@ if (windowWidth >= 1100) {
         {
             tag: "2025", count: "01 / 03", headline: "REHEARSING<br>LOGIC.",
             subDescriptions: [
-"PHASE 01: Problem identification and architectural mapping for the SIH '25 challenge.",
-        "PHASE 02: Intensive development sprint, establishing core system logic and data flow.",
-        "PHASE 03: Integrating real-time AI pipelines and optimizing processing latency.",
-        "PHASE 04: UI/UX refinement to bridge technical backend complexity with user-centric design.",
-        "PHASE 05: Final system audit of the Level 1 prototype submission.",
-        "MILESTONE: Successfully cleared initial screening, placing within the top performing teams."
+                "PHASE 01: Problem identification and architectural mapping for the SIH '25 challenge.",
+                "PHASE 02: Intensive development sprint, establishing core system logic and data flow.",
+                "PHASE 03: Integrating real-time AI pipelines and optimizing processing latency.",
+                "PHASE 04: UI/UX refinement to bridge technical backend complexity with user-centric design.",
+                "PHASE 05: Final system audit of the Level 1 prototype submission.",
+                "MILESTONE: Successfully cleared initial screening, placing within the top performing teams."
             ],
             images: [
                 "./../assets/Experience/DCode6.jpg", "./../assets/Experience/DCode1.jpg",
@@ -160,9 +160,9 @@ if (windowWidth >= 1100) {
         {
             tag: "2022", count: "02 / 03", headline: "COMMANDING<br>THE STAGE.",
             subDescriptions: [
-        "In discussion with the Director during the residency phase of 'Fandi'.",
-        "On stage at Shree Ram Centre (SRC) during the live performance.",
-        "Final curtain call with the cast at the SRC main auditorium."
+                "In discussion with the Director during the residency phase of 'Fandi'.",
+                "On stage at Shree Ram Centre (SRC) during the live performance.",
+                "Final curtain call with the cast at the SRC main auditorium."
             ],
             images: [
                 "./../assets/Experience/sir-src.jpg",
