@@ -106,3 +106,55 @@
     padding-left: 20%;
 }
 */
+
+
+
+
+
+/* --- SCALED TO PERCENTAGE (1920x1080 Baseline) --- */
+
+.charcoal-disk {
+    position: absolute;
+    /* Calculated: 3vh of 1080 is ~2.8% */
+    bottom: 2.8%;
+    /* Calculated: 5vw of 1920 is ~5% */
+    right: 5%;
+    width: 40%;
+    height: 13.8%; /* Proportional to 15vh */
+    
+    border-radius: 50%;
+    /* Keep border in rem/px for sharpness, or 0.2% for total fluid */
+    border: 0.2rem solid #515151; 
+    
+    /* COMBINED TRANSFORM: You had two separate ones; they must be one line 
+       to rotate AND move toward the screen (translateZ) */
+    transform: rotateX(75deg) scaleX(-1) translateZ(2vh);
+    
+    /* 3D Thickness and Shadow using your #515151 brand color */
+    box-shadow: 
+        0 1vh 0 #515151, 
+        0 3vh 5vh rgba(0, 0, 0, 0.15);
+    z-index: -1;
+}
+
+/* The Cutout - Grounded on Disk */
+.grounded-cutout {
+    /* Use height % to keep it relative to the container height */
+    height: 94%; 
+    width: auto;
+    object-fit: contain;
+    
+    /* Pushes you further RIGHT to hit the disk center */
+    /* margin-right: 4vw converted to % */
+    margin-right: 4%; 
+    
+    /* Nudges you DOWN to touch the surface perfectly */
+    /* margin-bottom: 4vh converted to % */
+    margin-bottom: 3.7%; 
+    
+    transform: scaleX(-1); /* Keeps you looking at your vision */
+    
+    z-index: 20;
+    position: relative;
+    pointer-events: none;
+}

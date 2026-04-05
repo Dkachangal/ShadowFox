@@ -489,7 +489,7 @@ body {
         font-size: 4vw;
         margin: 1.5vh 0;
         line-height: 0.9;
-        color: #fff;
+        color: #C9C9C9;
         font-family: "Playfair Display", serif;
     }
 
@@ -497,7 +497,7 @@ body {
         font-size: 1.1vw;
         max-width: 28vw;
         line-height: 1.6;
-        color: #c9c9c9;
+        color: #A5A0A0;
         min-height: 12vh;
         text-align: left;
     }
@@ -513,7 +513,7 @@ body {
         margin-top: 4vh;
         font-size: 0.9vw;
         font-weight: 700;
-        color: #fff;
+        /* background-color: #C9C9C9; */
         text-decoration: none;
         border-bottom: 2px solid #fff;
         padding-bottom: 5px;
@@ -896,18 +896,6 @@ body {
     /* ABOUT CONTACT------------------------------------------------------------------------------------------ */
 
     /* --- ABOUT & CONTACT 2026 AESTHETIC --- */
-/* --- SECTION 05: ABOUT & CONTACT (DESKTOP) --- */
-
-/* --- SECTION 05: EDITORIAL CHARACTER LAYOUT --- */
-/* --- SECTION 05: EDITORIAL MINIMALIST LAYOUT --- */
-/* --- SECTION 05: EDITORIAL MINIMALIST LAYOUT (SCALED) --- */
-
-/* --- SECTION 05: WHITE STUDIO EDITORIAL LAYOUT --- */
-
-/* --- SECTION 05: WHITE STUDIO WITH GROUNDED STAGE --- */
-/* --- SCOPED FINAL SECTION ENGINE --- */
-
-/* Left Side Text Control */
 .contact-left-final .content {
     padding-right: 45% !important; /* Prevents text from hitting the diagonal line */
     text-align: left;
@@ -920,7 +908,7 @@ body {
 }
 
 .pill-btn {
-    background: #fff !important;
+    background-color: #C9C9C9 !important;
     color: #515151 !important;
     padding: 1vw 2.2vw !important;
     border-radius: 5vw !important; 
@@ -951,42 +939,57 @@ body {
 }
 
 /* The Charcoal Disk (#515151) */
+/* --- SCALED TO PERCENTAGE (1920x1080 Baseline) --- */
+
 .charcoal-disk {
     position: absolute;
-    bottom: 3vh;
-    right: 5vw;
-    width: 40vw;
-    height: 15vh;
-    background: #515151; /* Your specific color branding */
+    /* Calculated: 3vh of 1080 is ~2.8% */
+    bottom: 2.8%;
+    /* Calculated: 5vw of 1920 is ~5% */
+    right: 17%;
+    width: 40%;
+    height: 13.8%; /* Proportional to 15vh */
+    
     border-radius: 50%;
-    transform: rotateX(75deg);
-    /* 3D Thickness and Shadow */
-    box-shadow: 0 1vh 0 #333, 0 3vh 5vh rgba(0,0,0,0.1);
-    z-index: 1;
+    /* Keep border in rem/px for sharpness, or 0.2% for total fluid */
+    border: 0.2rem solid #515151; 
+    
+    /* COMBINED TRANSFORM: You had two separate ones; they must be one line 
+       to rotate AND move toward the screen (translateZ) */
+    transform: rotateX(75deg) scaleX(-1) translateZ(-2.5vh);
+    
+    /* 3D Thickness and Shadow using your #515151 brand color */
+    box-shadow: 
+        0 1vh 0 #515151, 
+        0 3vh 5vh rgba(0, 0, 0, 0.15);
+    z-index: -1;
 }
 
 /* The Cutout - Grounded on Disk */
-/* --- CENTER-GROUNDING FIX --- */
-
 .grounded-cutout {
-    height: 94vh;
+    /* Use height % to keep it relative to the container height */
+    height: 94%; 
     width: auto;
     object-fit: contain;
     
     /* Pushes you further RIGHT to hit the disk center */
-    margin-right: 6vw; 
+    /* margin-right: 4vw converted to % */
+    margin-right: 4%; 
     
     /* Nudges you DOWN to touch the surface perfectly */
-    margin-bottom: 3.8vh; 
+    /* margin-bottom: 4vh converted to % */
+    margin-bottom: 3.7%; 
     
     transform: scaleX(-1); /* Keeps you looking at your vision */
     
-    /* SHARP CONTACT SHADOW: Darker and tighter for realism */
-    /* filter: drop-shadow(-0.2vw 0.1vh 0.2vh rgba(0,0,0,0.9)); */
-    
-    z-index: 1;
+    z-index: 20;
     position: relative;
     pointer-events: none;
+}
+.grounded-cutout:hover {
+    body {
+        background-color: black;
+    }
 }
 }
 
