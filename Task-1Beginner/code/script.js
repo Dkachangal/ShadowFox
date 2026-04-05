@@ -155,7 +155,7 @@ if (windowWidth >= 1100) {
                 "./../assets/Experience/DCode3.jpg", "./../assets/Experience/DCode4.jpg",
                 "./../assets/Experience/DCode5.jpg", "./../assets/Experience/DCode2.jpg"
             ],
-            btn: "View SIH Solution —>", url: "https://github.com/Dkachangal"
+            btn: "View SIH Solution —>", url: "https://github.com/Dkachangal/SIH-2025-26"
         },
         {
             tag: "2022", count: "02 / 03", headline: "COMMANDING<br>THE STAGE.",
