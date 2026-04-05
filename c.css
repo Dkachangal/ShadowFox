@@ -1,0 +1,108 @@
+ /*
+    body { overflow-y: auto; }
+    .right-side { display: none; }
+    .left-side { width: 100%; position: relative; clip-path: none; }
+    .panel-wrapper { transform: none !important; }
+
+    section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 40px; }
+    section.bg-charcoal { background: linear-gradient(180deg, #515151 85%, #333 100%); color: white; }
+    section.bg-white { background: #c9c9c9; color: #515151; }
+
+    h1 { font-size: 4rem; margin-bottom: 15px; }
+    h2 { font-size: 3rem; margin-bottom: 15px; }
+    .mobile-only { display: block; font-size: 1.2rem; opacity: 0.7; margin-top: 10px; }
+    
+    .menu-toggle { display: block; font-size: 28px; cursor: pointer; color: #c9c9c9; mix-blend-mode: difference; }
+
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+    }
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #Hi-I-am {
+        font-family: "Playfair Display", serif;
+        font-size: 2.1rem;
+        font-weight: 600;
+        opacity: 0.8;
+        margin-bottom: 5%;
+        text-align: left;
+    }
+    #dkName {
+        font-family: "Playfair Display", serif;
+        margin-top: 10%;
+        font-weight: 600;
+        opacity: 0.8;
+        text-align: left;
+        font-size: 4rem;
+    }
+    #software-developer {
+
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        opacity: 0.8;
+        text-align: left;
+    }
+    .btns {
+        position: absolute;
+        width: 100%;
+        padding-top: 15%;
+        display: flex;
+    
+        align-items: left;
+        margin-top: 0%;
+        
+        gap: 1rem;
+    }
+    .home-page-btns {
+        width: 2.1rem;
+        height: 2.1rem;
+        transition: transform 0.5s ease;
+    }
+
+.sayHello {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    min-width: 9rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2rem;
+    
+
+    background-color: #c9c9c9;
+    border: 1px solid #c9c9c9;
+    color: #515151;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.sayHelloBtn {
+    width: 1.2rem; 
+    height: auto;  
+    transition: transform 0.5s ease;
+}
+
+/* Hover Effect 
+.sayHello:hover {
+    transform: translateY(-0.25rem); 
+}
+
+.sayHello:hover .sayHelloBtn {
+    transform: rotate(43deg);
+}
+
+.imgOne {
+    padding-left: 20%;
+}
+*/
