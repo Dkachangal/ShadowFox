@@ -62,22 +62,62 @@
                             </div>
                         </div>
                     </section>
+                    <!-- Technical Skills Section -->
                     <section class="bg-white">
                         <div class="content reveal">
-                            <h2>Technical Skills</h2>
-                            <p>2nd Year B.Tech Student. <br>Interested in Computer Vision and Backend Logic.</p>
+                            <div class="tech-info">
+                                <span class="tech-sub">02. Expertise</span>
+                                <h2 class="tech-main-title">Forging<br>Digital Logic.</h2>
+                                <p class="tech-description">Building high-performance systems and AI-driven solutions
+                                    with a focus on backend efficiency and computer vision.</p>
+
+                                <div class="tech-tags">
+                                    <span class="tag-pill">Systems</span>
+                                    <span class="tag-pill">AI/ML</span>
+                                    <span class="tag-pill">Backend</span>
+                                </div>
+                            </div>
                         </div>
                     </section>
-                    <section class="bg-charcoal">
+
+                    <!-- PROJECT SECTION -->
+                    <section class="bg-charcoal project-details">
                         <div class="content reveal">
-                            <h2>Projects</h2>
-                            <p>OpenCV, MediaPipe & Express.js</p>
+                            <div id="project-info-container">
+                                <span class="p-num">01 / 03</span>
+                                <h2 id="p-title" class="p-main-title">Vision-Based Virtual UI</h2>
+                                <p id="p-desc" class="p-description">
+                                    Real-time hand tracking using MediaPipe and OpenCV. This system detects index finger
+                                    coordinates to interact with virtual UI elements with zero latency.
+                                </p>
+                                <div class="p-tags" id="p-tags">
+                                    <span class="tag-pill">Python</span>
+                                    <span class="tag-pill">OpenCV</span>
+                                    <span class="tag-pill">MediaPipe</span>
+                                </div>
+                                <a href="https://github.com/Dkachangal/AI-ML-with-Python" target="_blank" id="p-link"
+                                    class="p-btn">View
+                                    Repository —></a>
+                                <a href="https://divyanshk-currency-converter.netlify.app/" target="_blank"
+                                    id="currencyConvertorLive">View Live -></a>
+                            </div>
                         </div>
                     </section>
-                    <section class="bg-white">
+                    <!-- EXPERIENCE SECTION ------------------------------------------------------ -->
+                    <section class="bg-white experience-details">
                         <div class="content reveal">
-                            <h2>Experience</h2>
-                            <p>SAARE KAAM YAHA</p>
+                            <div id="experience-info-block">
+                                <span class="exp-counter" id="exp-count">01 / 03</span>
+                                <h2 id="exp-headline" class="exp-headline">REHEARSING<br>LOGIC.</h2>
+                                <p id="exp-summary" class="exp-summary">
+                                    Cleared Level 1 of SIH '25. Led technical architecture for a team project, focusing
+                                    on scalable system prototypes and rapid logic deployment.
+                                </p>
+                                <div id="exp-actions">
+                                    <a href="https://github.com/Dkachangal" target="_blank" class="p-btn" id="exp-link"
+                                        style="color: #515151; border-color: #515151;">View SIH Solution —></a>
+                                </div>
+                            </div>
                         </div>
                     </section>
 
@@ -90,7 +130,7 @@
 
                 </div>
             </div>
-
+            <!-- -------------------------RIGHT SIDE---------------------------------------------------------- -->
             <div class="side right-side">
                 <div class="panel-wrapper" id="right-wrapper">
                     <section class="bg-white">
@@ -98,21 +138,116 @@
                             <h3>CONTACTING___.Get In Touch.</h3>
                         </div>
                     </section>
-                    <section class="bg-charcoal">
+                    <!-- EXPERIENCE VISUAL SECTION---------------------------------------------------->
+                    <section class="bg-charcoal experience-visual">
                         <div class="content">
-                            <h3>SAARE KAAM yhhhhh</h3>
+                            <div class="gallery-engine">
+                                <div class="main-display" id="main-display-box">
+                                    <img id="main-exp-img" src="./../assets/Experience/stage-src.jpg"
+                                        alt="Experience View" class="gifFitter">
+                                    <div class="nav-overlay">
+                                        <button class="nav-arrow left" onclick="manualMove(-1)">‹</button>
+                                        <div class="nav-dots" id="nav-dots-container">
+                                        </div>
+                                        <button class="nav-arrow right" onclick="manualMove(1)">›</button>
+                                    </div>
+                                    <div class="display-overlay">
+                                        <span id="display-tag">SIH '25</span>
+                                    </div>
+                                </div>
+
+                                <div class="thumb-strip">
+                                    <button class="exp-thumb active" onclick="swapExp(0)">
+                                        <img src="./../assets/Experience/DCode6.jpg" alt="SIH">
+                                        <div class="thumb-indicator"></div>
+                                    </button>
+                                    <button class="exp-thumb" onclick="swapExp(1)">
+                                        <img src="./../assets/Experience/stage-src.jpg" alt="SRC Theatre">
+                                        <div class="thumb-indicator"></div>
+                                    </button>
+                                    <button class="exp-thumb" onclick="swapExp(2)">
+                                        <img src="./../assets/Experience/Ideathon.jpg" alt="Ideathon">
+                                        <div class="thumb-indicator"></div>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </section>
-                    <section class="bg-white">
-                        <div class="content">
-                            <h3>AI & ML.</h3>
+                    <section class="bg-white project-visual">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="p-card active" data-id="1">
+                                    <div class="card-image-box">
+                                        <img src="./../assets/gifs/AI-ML-S.gif" alt="Hand Tracking">
+                                    </div>
+                                    <div class="card-overlay">
+                                        <h3>Virtual UI</h3>
+                                        <p>Computer Vision</p>
+                                    </div>
+                                </div>
+                                <div class="p-card" data-id="2">
+                                    <div class="card-image-box">
+                                        <img src="./../assets/gifs/text2hand.gif" alt="Handwriting" class="gifFitter">
+                                    </div>
+                                    <div class="card-overlay">
+                                        <h3>Script Gen</h3>
+                                        <p>Image Processing</p>
+                                    </div>
+                                </div>
+                                <div class="p-card" data-id="3">
+                                    <div class="card-image-box">
+                                        <img src="./../assets/gifs/currencyConvertor.gif" alt="Currency">
+                                    </div>
+                                    <div class="card-overlay">
+                                        <h3>FX Dash</h3>
+                                        <p>Web Development</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-nav">
+                                <button id="prevBtn">←</button>
+                                <button id="nextBtn">→</button>
+                            </div>
                         </div>
                     </section>
-                    <section class="bg-charcoal">
+
+                    <!-- Technical Section -->
+                    <section class="bg-charcoal tech-visual">
                         <div class="content">
-                            <h3>Deep Logic.</h3>
+                            <div class="skills-grid-vertical">
+                                <div class="hex-row">
+                                    <div class="hex-skill d-Reveal-1">
+                                        <div class="hex-content"><span class="h-text">C++</span><span
+                                                class="h-sub">Logic | DSA</span></div>
+                                    </div>
+                                    <div class="hex-skill d-Reveal-2">
+                                        <div class="hex-content"><span class="h-text">Python</span><span
+                                                class="h-sub">AI / ML</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="hex-row row-offset">
+                                    <div class="hex-skill d-Reveal-3 m-special">
+                                        <div class="hex-content"><span class="h-text">Java</span><span
+                                                class="h-sub">OOP</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="hex-row">
+                                    <div class="hex-skill d-Reveal-4">
+                                        <div class="hex-content"><span class="h-text">Node.js</span><span
+                                                class="h-sub">Backend</span></div>
+                                    </div>
+                                    <div class="hex-skill d-Reveal-5">
+                                        <div class="hex-content"><span class="h-text">JS / CSS</span><span
+                                                class="h-sub">Web</span></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </section>
+
                     <section class="bg-white imgOne">
                         <!-- <div class="imgOne"> -->
                         <div class="img-content">
@@ -153,8 +288,48 @@
 
                 <section class="m-slide bg-charcoal" id="m-tech">
                     <div class="m-content m-reveal">
-                        <h2>Tech Stack</h2>
-                        <p style="opacity:0.5;">[ Building your stack... ]</p>
+                        <h2 class="m-tech-title">Tech Stack</h2>
+
+                        <div class="m-hex-grid">
+                            <div class="m-hex-row">
+                                <div class="m-hex-skill">
+                                    <div class="m-hex-content">
+                                        <span class="m-h-text">C++</span>
+                                        <span class="m-h-sub">Logic | DSA</span>
+                                    </div>
+                                </div>
+                                <div class="m-hex-skill">
+                                    <div class="m-hex-content">
+                                        <span class="m-h-text">Python</span>
+                                        <span class="m-h-sub">AI / ML</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="m-hex-row m-row-offset">
+                                <div class="m-hex-skill m-special">
+                                    <div class="m-hex-content">
+                                        <span class="m-h-text">Java</span>
+                                        <span class="m-h-sub">OOP</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="m-hex-row">
+                                <div class="m-hex-skill">
+                                    <div class="m-hex-content">
+                                        <span class="m-h-text">Node.js</span>
+                                        <span class="m-h-sub">Backend</span>
+                                    </div>
+                                </div>
+                                <div class="m-hex-skill">
+                                    <div class="m-hex-content">
+                                        <span class="m-h-text">JS / CSS</span>
+                                        <span class="m-h-sub">Web</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 

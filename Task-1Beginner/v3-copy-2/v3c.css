@@ -30,7 +30,7 @@ body {
 /* --------------------------------------------------------------------------------------------------------------------------------------------- */
 
 
-/* --- DESKTOP WIDESCREEN ENGINE (>= 1300px) --- */
+/* --- DESKTOP WIDESCREEN ENGINE (>= 1100px) --- */
 @media (min-width: 1100px) {
 
     /* turns the mobile view OFF */
@@ -199,6 +199,7 @@ body {
         }
 
         #software-developer {
+            color: #a5a0a0;
             font-family: "Playfair Display", serif;
             /* 1.2rem (~19.2px) -> 1vw */
             font-size: 1vw;
@@ -280,7 +281,507 @@ body {
             opacity: 1 !important;
             transform: none !important;
         }
+
+        /* Technnical Skills */
+        /* --- TECH SECTION (LEFT) --- */
+        .tech-info {
+            text-align: left;
+            padding-right: 5vw;
+        }
+
+        .tech-sub {
+            font-size: 0.7vw;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: #515151;
+            opacity: 0.5;
+            display: block;
+            margin-bottom: 1vh;
+        }
+
+        .tech-main-title {
+            font-size: 4.5vw;
+            line-height: 0.9;
+            margin-bottom: 3vh;
+            color: #515151;
+        }
+
+        .tech-description {
+            font-size: 1.1vw;
+            max-width: 25vw;
+            line-height: 1.6;
+            color: #515151;
+            opacity: 0.8;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 0.8vw;
+            margin-top: 3vh;
+        }
+
+        .tag-pill {
+            font-size: 0.7vw;
+            padding: 0.4vw 1vw;
+            border: 1px solid #515151;
+            border-radius: 2vw;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        /* --- THE SKILLS GRID (RIGHT) --- */
+        /* --- DESKTOP STAGGERED HEX GRID (2-1-2) --- */
+        .skills-grid-vertical {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* Use a very tight gap so the negative margins handle the locking */
+            gap: 0.5vw;
+        }
+
+        .hex-row {
+            display: flex;
+            gap: 1.5vw;
+            /* Horizontal space between hexes */
+            justify-content: center;
+        }
+
+        /* The Mobile-Style Interlock Logic for Desktop */
+        .row-offset {
+            /* Pulls the middle hexagon UP into the top row's gap */
+            margin-top: -3.5vw;
+            /* Pulls the bottom row UP into the middle hexagon's gap */
+            margin-bottom: -3.5vw;
+        }
+
+        /* The Sparking Hexagon Engine (Desktop Scale) */
+        .hex-skill {
+            position: relative;
+            width: 10.5vw;
+            /* Perfect size for the 2-1-2 vertical stack */
+            height: 12.1vw;
+            background: #1a1a1a;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 1;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* THE SPARKING PERIMETER */
+        .hex-skill::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent,
+                    transparent,
+                    #c9c9c9 2%,
+                    #fff 5%,
+                    #c9c9c9 8%,
+                    transparent 15%);
+            animation: sparkRotate 4s linear infinite;
+            z-index: -2;
+        }
+
+        .hex-skill::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: #282828;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            z-index: -1;
+            transition: background 0.3s ease;
+        }
+
+        /* Hover States for Desktop Interaction */
+        .hex-skill:hover {
+            transform: translateY(-0.5vw) scale(1.08);
+            cursor: pointer;
+        }
+
+        .hex-skill:hover::before {
+            animation-duration: 1.2s;
+            /* Speed up spark on hover */
+            background: conic-gradient(transparent, #fff 5%, transparent 20%);
+        }
+
+        /* Text Content Scaling */
+        .h-text {
+            font-size: 1vw;
+            font-weight: 900;
+            color: #fff;
+            display: block;
+            margin-bottom: 0.2vh;
+        }
+
+        .h-sub {
+            font-size: 0.6vw;
+            color: rgba(201, 201, 201, 0.4);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+        }
+
+        /* Animations */
+        @keyframes sparkRotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Entrance Stagger */
+        .d-Reveal-1 {
+            transition-delay: 0.1s;
+        }
+
+        .d-Reveal-2 {
+            transition-delay: 0.2s;
+        }
+
+        .d-Reveal-3 {
+            transition-delay: 0.3s;
+        }
+
+        .d-Reveal-4 {
+            transition-delay: 0.4s;
+        }
+
+        .d-Reveal-5 {
+            transition-delay: 0.5s;
+        }
+
+        /* PROJECT SECTION GIF */
+        .gifFitter {
+            /* 1. Force the image to take up the full area of the card */
+            width: 100%;
+            height: 100%;
+
+            /* 2. Now 'contain' has a box to work with. 
+       It will fit the whole GIF inside without cropping anything. */
+            object-fit: contain;
+
+            /* 3. This prevents the GIF from 'stretching' if it's too small */
+            display: block;
+            background-color: #1a1a1a;
+            /* Optional: matches your charcoal theme for any letterboxing */
+        }
     }
+
+    /* PROJECT SECTION-------------------------------------------------------------- */
+    /* --- PROJECT SECTION STYLES --- */
+    .p-num {
+        font-size: 0.8vw;
+        color: #c9c9c9;
+        opacity: 0.5;
+        font-weight: 700;
+        display: block;
+    }
+
+    .p-main-title {
+        font-size: 4vw;
+        margin: 1.5vh 0;
+        line-height: 0.9;
+        color: #fff;
+        font-family: "Playfair Display", serif;
+    }
+
+    .p-description {
+        font-size: 1.1vw;
+        max-width: 28vw;
+        line-height: 1.6;
+        color: #c9c9c9;
+        min-height: 12vh;
+        text-align: left;
+    }
+
+    .p-tags {
+        display: flex;
+        gap: 0.8vw;
+        margin-top: 2vh;
+    }
+
+    .p-btn {
+        display: inline-block;
+        margin-top: 4vh;
+        font-size: 0.9vw;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 2px solid #fff;
+        padding-bottom: 5px;
+        transition: 0.3s;
+    }
+
+    .p-btn:hover {
+        opacity: 0.7;
+        transform: translateX(10px);
+    }
+
+    /* Container to stack links vertically */
+    .p-actions {
+        display: flex;
+        flex-direction: column;
+        /* Forces vertical stacking */
+        align-items: flex-start;
+        /* Aligns them to the left */
+        gap: 1.5vh;
+        /* Space between the two links */
+        margin-top: 4vh;
+    }
+
+    /* Base style for BOTH buttons (shared look) */
+    #p-link,
+    #currencyConvertorLive {
+        font-size: 0.9vw;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 2px solid #fff;
+        padding-bottom: 5px;
+        transition: 0.3s;
+        /* Remove individual margin-top since the container handles 'gap' now */
+        margin-top: 0;
+    }
+
+    /* Ensure the Live link stays hidden until JS triggers it */
+    #currencyConvertorLive {
+        display: none;
+    }
+
+    /* Hover effects for both */
+    #p-link:hover,
+    #currencyConvertorLive:hover {
+        opacity: 0.7;
+        transform: translateX(10px);
+    }
+
+    /* --- 3D CAROUSEL ENGINE --- */
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 1200px;
+        overflow: hidden;
+    }
+
+    .carousel-track {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform-style: preserve-3d;
+    }
+
+    .p-card {
+        position: absolute;
+        width: 18vw;
+        height: 26vw;
+        background: #1a1a1a;
+        border-radius: 1vw;
+        overflow: hidden;
+        transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        filter: grayscale(100%) blur(2px);
+        opacity: 0.2;
+        transform: translateX(0) scale(0.6) rotateY(0);
+    }
+
+    /* 3D Positions */
+    .p-card.active {
+        filter: grayscale(0%) blur(0);
+        opacity: 1;
+        transform: translateX(0) scale(1.1) translateZ(150px);
+        z-index: 10;
+        box-shadow: 0 2vw 5vw rgba(0, 0, 0, 0.3);
+    }
+
+    .p-card.prev {
+        transform: translateX(-14vw) scale(0.8) rotateY(30deg);
+        opacity: 0.5;
+        z-index: 5;
+        filter: grayscale(50%);
+    }
+
+    .p-card.next {
+        transform: translateX(14vw) scale(0.8) rotateY(-30deg);
+        opacity: 0.5;
+        z-index: 5;
+        filter: grayscale(50%);
+    }
+
+    .card-image-box {
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.5vw;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+        color: #fff;
+        text-align: left;
+    }
+
+    .card-overlay h3 {
+        font-size: 1.2vw;
+        margin: 0;
+        font-weight: 900;
+    }
+
+    .card-overlay p {
+        font-size: 0.6vw;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        opacity: 0.6;
+    }
+
+    /* Navigation */
+    .carousel-nav {
+        position: absolute;
+        bottom: 5vh;
+        display: flex;
+        gap: 1.5vw;
+        z-index: 100;
+    }
+
+    .carousel-nav button {
+        background: #515151;
+        border: none;
+        color: #fff;
+        width: 3.5vw;
+        height: 3.5vw;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2vw;
+        transition: 0.3s;
+    }
+
+    .carousel-nav button:hover {
+        background: #000;
+        transform: scale(1.1);
+    }
+
+    /* EXPERIENCE SECTION --------------------------------------------------------- */
+    /* --- EXPERIENCE: LEFT TEXT --- */
+/* --- EXPERIENCE: SHARED LAYOUT --- */
+#experience-info-block { 
+    text-align: left; padding-right: 4vw; 
+    transition: opacity 0.4s ease, transform 0.4s ease; 
+}
+
+.exp-counter { font-size: 0.8vw; color: #515151; opacity: 0.5; font-weight: 700; }
+.exp-headline { 
+    font-size: 4.5vw; line-height: 0.9; margin: 2vh 0; 
+    color: #515151; font-family: "Playfair Display", serif; font-weight: 900; 
+}
+#exp-summary { 
+    font-size: 1.1vw; max-width: 25vw; line-height: 1.6; 
+    color: #515151; opacity: 0.8; min-height: 12vh; transition: opacity 0.4s ease;
+}
+
+/* --- RIGHT SIDE: GALLERY ENGINE --- */
+.gallery-engine { 
+    display: flex; flex-direction: column; gap: 2.5vh; 
+    width: 32vw; align-items: center; justify-content: center;
+    margin-left: 10vw; 
+}
+
+.main-display {
+    position: relative; width: 100%; height: 42vh;
+    border-radius: 1vw; overflow: hidden; background: #111;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+}
+
+#main-exp-img {
+    max-width: 100%; max-height: 100%; width: auto; height: auto;
+    object-fit: contain; transition: opacity 0.5s ease;
+}
+
+/* Year Tag Overlay */
+.display-overlay { position: absolute; top: 1.2vw; right: 1.2vw; z-index: 20; }
+#display-tag {
+    background: #fff; color: #1a1a1a; padding: 0.5vw 1.2vw;
+    font-size: 0.8vw; font-weight: 900; letter-spacing: 0.1em;
+    border-radius: 2px; box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* --- NAVIGATION OVERLAYS (PIPS & ARROWS) --- */
+.nav-overlay {
+    position: absolute; inset: 0; display: flex; align-items: center;
+    justify-content: space-between; padding: 0 1vw; z-index: 15;
+    opacity: 0; transition: opacity 0.3s ease; background: rgba(0,0,0,0.1);
+}
+.main-display:hover .nav-overlay { opacity: 1; }
+
+.nav-arrow {
+    background: rgba(255,255,255,0.2); border: none; color: #fff;
+    font-size: 2vw; width: 3vw; height: 3vw; border-radius: 50%;
+    cursor: pointer; backdrop-filter: blur(5px); transition: 0.3s;
+}
+.nav-arrow:hover { background: #fff; color: #1a1a1a; }
+
+.nav-dots {
+    position: absolute; bottom: 1.2vw; left: 50%;
+    transform: translateX(-50%); display: flex; gap: 0.6vw;
+}
+.dot {
+    width: 0.5vw; height: 0.5vw; background: rgba(255,255,255,0.3);
+    border-radius: 50%; transition: all 0.4s ease;
+}
+.dot.active { background: #fff; width: 1.2vw; border-radius: 10px; }
+
+/* --- MILESTONE THUMBNAILS (BOTTOM BUTTONS) --- */
+.thumb-strip { display: flex; gap: 1vw; width: 100%; height: 10vh; }
+.exp-thumb {
+    position: relative; flex: 1; background: #222; border: none;
+    border-radius: 0.8vw; overflow: hidden; cursor: pointer;
+    opacity: 0.3; filter: grayscale(100%); transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.exp-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.exp-thumb.active { opacity: 1; filter: grayscale(0%); transform: translateY(-5px); }
+
+.thumb-indicator {
+    position: absolute; inset: 0; border: 2px solid transparent;
+    transition: 0.3s; z-index: 5; pointer-events: none;
+}
+.exp-thumb.active .thumb-indicator { border-color: #fff; }
+}
+
+.yt-icon {
+    display: inline-block;
+    width: 1.2vw; /* Scales with your 1920px baseline */
+    height: auto;
+    vertical-align: middle;
+    margin: 0 0.4vw; /* Space between text and arrow */
+    filter: brightness(0) saturate(100%) invert(32%) sepia(0%) animate; /* Matches your #515151 grey */
+    transition: transform 0.3s ease;
+}
+
+.p-btn:hover .yt-icon {
+    transform: scale(1.2);
+    filter: none; /* Shows original YouTube colors on hover if desired */
 }
 
 
@@ -294,190 +795,399 @@ body {
         display: none;
     }
 
-@media (max-width: 1100px) {
-    .desktop-view { display: none !important; }
-    .mobile-view { display: block !important; width: 100%; position: relative; }
-    body { overflow-y: auto; overflow-x: hidden; background: #fff; }
+    @media (max-width: 1100px) {
+        .desktop-view {
+            display: none !important;
+        }
 
-/* --- All Percentage/Fluid Units --- */
-.m-tagline {
-    /* Was 6vw, keeping it for 1:1 scaling */
-    font-size: 6vw; 
-    margin-bottom: 2vh;
-}
+        .mobile-view {
+            display: block !important;
+            width: 100%;
+            position: relative;
+        }
 
-.m-name {
-    /* This is your "12% of screen width" setting */
-    font-size: 12vw; 
-    line-height: 1.1;
-    margin-bottom: 3vh;
-}
+        body {
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: #fff;
+        }
 
-.m-title {
-    /* 4.5% of screen width */
-    font-size: 4.5vw;
-}
+        /* --- SECTION DIVIDERS --- */
+        .m-slide:not(:first-child) {
+            /* 1px is best for a "hairline" look. 
+       rgba(255,255,255,0.1) creates a subtle white line that 
+       looks premium on the charcoal background. */
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
 
-.m-hero-img-container {
-    /* Image takes up exactly 50% of the screen height */
-    height: 50vh; 
-    width: 100%;
-}
-    .mobile-header {
-        position: fixed; top: 0; width: 100%; height: 8vh;
-        display: flex; justify-content: space-between; align-items: center;
-        padding: 0 6%; z-index: 2000; mix-blend-mode: difference;
-    }
+        /* If you want the line to be more visible on the white Home section: */
+        #m-tech {
+            /* This is the line between Home (White) and Tech (Charcoal) */
+            border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+        }
 
-.m-logo { 
-    font-family: "Fugaz One", serif; 
-    /* 6% of the screen width */
-    font-size: 6vw; 
-    color: #fff; 
-}
+        /* --- All Percentage/Fluid Units --- */
+        .m-tagline {
+            /* Was 6vw, keeping it for 1:1 scaling */
+            font-size: 6vw;
+            margin-bottom: 2vh;
+        }
 
-.m-menu-toggle { 
-    color: #fff; 
-    /* 8% of the screen width */
-    font-size: 8vw; 
-    cursor: pointer; 
-    /* Remove any default button padding to keep it tight */
-    padding: 0;
-    line-height: 1;
-}
+        .m-name {
+            /* This is your "12% of screen width" setting */
+            padding-top: 5%;
+            font-size: 12vw;
+            line-height: 1.1;
+            margin-bottom: 3vh;
+        }
 
-.mobile-header {
-    position: fixed; 
-    top: 0; 
-    width: 100%; 
-    /* 8% of the screen height */
-    height: 8vh; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    /* 6% padding on the sides */
-    padding: 0 6%; 
-    z-index: 2000; 
-    mix-blend-mode: difference;
-}
+        .m-title {
+            /* 4.5% of screen width */
 
-    .m-slide {
-        width: 100%; min-height: 100vh; display: flex; flex-direction: column;
-        position: relative; padding: 12vh 8% 5vh 8%;
-    }
+            font-size: 4.5vw;
+        }
 
-    .bg-charcoal { background-color: #515151; color: #c9c9c9; }
-    .bg-charcoal h2 { color: #c9c9c9; }
+        .m-hero-img-container {
+            /* Image takes up exactly 50% of the screen height */
+            height: 50vh;
+            width: 100%;
+        }
 
-/* Hero Section - The Final Fix for Short/Wide Screens */
-.m-hero { 
-    background-color: #fff; 
-    justify-content: flex-start; 
-    text-align: left; 
-    padding-top: 10vh; 
-    padding-left: 7%;
-    padding-right: 7%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    /* Prevent content from overflowing the section itself */
-    overflow: hidden; 
-}
+        .mobile-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 8vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 6%;
+            z-index: 2000;
+            mix-blend-mode: difference;
+        }
 
-.m-tagline { 
-    font-family: "Playfair Display", serif; 
-    /* Cap the size even lower for very short screens */
-    font-size: clamp(20px, 8vw, 38px); 
-    margin-bottom: 1vh; 
-    color: #515151; 
-    font-weight: 600;
-    line-height: 1.2;
-}
+        .m-logo {
+            font-family: "Fugaz One", serif;
+            /* 6% of the screen width */
+            font-size: 6vw;
+            color: #fff;
+        }
 
-.m-name { 
-    font-family: "Playfair Display", serif; 
-    /* Reduced max-cap to 100px to survive 600px height screens */
-    font-size: clamp(40px, 16vw, 100px); 
-    line-height: 0.9; 
-    margin-bottom: 1.5vh; 
-    color: #515151; 
-    font-weight: 900;
-    letter-spacing: -0.02em;
-}
+        .m-menu-toggle {
+            color: #fff;
+            /* 8% of the screen width */
+            font-size: 8vw;
+            cursor: pointer;
+            /* Remove any default button padding to keep it tight */
+            padding: 0;
+            line-height: 1;
+        }
 
-.m-title { 
-    font-size: clamp(14px, 5vw, 24px); 
-    font-weight: 700; 
-    color: #515151;
-    opacity: 0.9;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 2vh; 
-}
+        .mobile-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            /* 8% of the screen height */
+            height: 8vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* 6% padding on the sides */
+            padding: 0 6%;
+            z-index: 2000;
+            mix-blend-mode: difference;
+        }
 
-/* --- THE SYSTEM FIX --- */
-.m-hero-img-container {
-    position: absolute; 
-    bottom: 0; 
-    left: 0; 
-    width: 100%; 
-    
-    /* MODIFIED: If the screen is short (600px), 
+        .m-slide {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 12vh 8% 5vh 8%;
+        }
+
+        .bg-charcoal {
+            background-color: #515151;
+            color: #c9c9c9;
+        }
+
+        .bg-charcoal h2 {
+            color: #c9c9c9;
+        }
+
+        /* Hero Section - The Final Fix for Short/Wide Screens */
+        .m-hero {
+            background-color: #fff;
+            justify-content: flex-start;
+            text-align: left;
+            padding-top: 10vh;
+            padding-left: 7%;
+            padding-right: 7%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            /* Prevent content from overflowing the section itself */
+            overflow: hidden;
+        }
+
+        .m-tagline {
+            font-family: "Playfair Display", serif;
+            /* Cap the size even lower for very short screens */
+            font-size: clamp(20px, 8vw, 38px);
+            margin-bottom: 1vh;
+            color: #515151;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .m-name {
+            font-family: "Playfair Display", serif;
+            /* Reduced max-cap to 100px to survive 600px height screens */
+            font-size: clamp(40px, 16vw, 100px);
+            line-height: 0.9;
+            margin-bottom: 1.5vh;
+            color: #515151;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .m-title {
+            font-size: clamp(14px, 5vw, 24px);
+            font-weight: 700;
+            color: #515151;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 2vh;
+        }
+
+        /* --- THE SYSTEM FIX --- */
+        .m-hero-img-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+
+            /* MODIFIED: If the screen is short (600px), 
        the image shrinks to 35% to give text room. */
-    height: clamp(200px, 35vh, 45vh); 
-    
-    display: flex; 
-    justify-content: center; 
-    align-items: flex-end; 
-    overflow: hidden;
-    pointer-events: none; 
-    z-index: 1;
-}
+            height: clamp(200px, 35vh, 45vh);
 
-.m-hero-img { 
-    /* Force the image to stay contained */
-    max-height: 100%;
-    width: auto;
-    object-fit: contain; 
-    object-position: bottom; 
-}
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
 
-/* --- OPTIONAL: Orientation Fix --- 
+        .m-hero-img {
+            /* Force the image to stay contained */
+            max-height: 100%;
+            width: auto;
+            object-fit: contain;
+            object-position: bottom;
+        }
+
+        /* TECH STACK */
+
+        /* --- MOBILE TECH STACK (SPARKING HEXAGONS) --- */
+        .m-tech-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(32px, 10vw, 50px);
+            color: #c9c9c9;
+            margin-bottom: 5vh;
+            text-align: center;
+        }
+
+        .m-hex-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2vw;
+            /* Tight vertical gap */
+            width: 100%;
+        }
+
+        .m-hex-row {
+            display: flex;
+            gap: 4vw;
+            /* Horizontal gap between hexes */
+            justify-content: center;
+        }
+
+        /* Offset for the interlocking honeycomb effect on mobile */
+        .m-row-offset {
+            margin-top: -8vw;
+            margin-bottom: -8vw;
+        }
+
+        .m-hex-skill {
+            position: relative;
+            width: 32vw;
+            /* Scaled for mobile width */
+            height: 36.8vw;
+            /* Proportional 1:1.15 aspect ratio */
+            background: #1a1a1a;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* THE MOBILE SPARK */
+        .m-hex-skill::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent,
+                    transparent,
+                    #c9c9c9 2%,
+                    #fff 5%,
+                    #c9c9c9 8%,
+                    transparent 15%);
+            animation: mSparkRotate 4s linear infinite;
+            z-index: 1;
+        }
+
+        /* THE INNER BODY */
+        .m-hex-skill::after {
+            content: '';
+            position: absolute;
+            inset: 1.5px;
+            /* Thinner border for mobile */
+            background: #282828;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            z-index: 2;
+        }
+
+        /* TEXT CONTENT */
+        .m-hex-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .m-h-text {
+            font-size: 3.8vw;
+            font-weight: 900;
+            color: #fff;
+            display: block;
+            margin-bottom: 0.5vh;
+        }
+
+        .m-h-sub {
+            font-size: 2.2vw;
+            color: rgba(201, 201, 201, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
+
+        /* Highlight the "Special" hex (like OpenCV) */
+        .m-special::before {
+            background: conic-gradient(transparent,
+                    #fff 5%,
+                    transparent 20%);
+            animation-duration: 2s;
+            /* Faster spark for special skills */
+        }
+
+        /* ANIMATION */
+        @keyframes mSparkRotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* --- OPTIONAL: Orientation Fix --- 
    If someone uses a phone in landscape (wide/short) */
-@media (max-height: 620px) {
-    .m-hero-img-container {
-        height: 30vh; /* Shinks image even more if screen is tiny */
-    }
-    .m-name {
-        font-size: clamp(35px, 12vw, 80px); /* Shrinks name if screen is tiny */
-    }
-}
+        @media (max-height: 620px) {
+            .m-hero-img-container {
+                height: 30vh;
+                /* Shinks image even more if screen is tiny */
+            }
 
-    .m-hero-img-container {
-        position: absolute; bottom: 0; left: 0; width: 100%; height: 50vh;
-        display: flex; justify-content: center; align-items: flex-end; overflow: hidden;
-    }
-    .m-hero-img { width: 100%; height: 100%; object-fit: contain; object-position: bottom; }
+            .m-name {
+                font-size: clamp(35px, 12vw, 80px);
+                /* Shrinks name if screen is tiny */
+            }
+        }
 
-    /* Fixed Overlays */
-    .m-social-overlay {
-        position: fixed; bottom: 4vh; right: 6%; 
-        display: flex; align-items: center; gap: 15px; z-index: 1500;
-    }
-    .m-icon-link img { width: clamp(30px, 9vw, 45px); height: auto; }
-    .m-say-hi-bubble {
-        background-color: #c9c9c9; color: #fff; padding: 12px 24px;
-        border-radius: 30px 30px 5px 30px; font-weight: 700; text-decoration: none;
-        font-size: clamp(14px, 4vw, 18px); box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        .m-hero-img-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        .m-hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: bottom;
+        }
+
+        /* Fixed Overlays */
+        .m-social-overlay {
+            position: fixed;
+            bottom: 4vh;
+            right: 6%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1500;
+        }
+
+        .m-icon-link img {
+            width: clamp(30px, 9vw, 45px);
+            height: auto;
+        }
+
+        .m-say-hi-bubble {
+            background-color: #c9c9c9;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px 30px 5px 30px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: clamp(14px, 4vw, 18px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animation */
+        .m-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .m-reveal.m-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bg-charcoal h2 {
+            font-size: clamp(30px, 10vw, 50px);
+            text-align: center;
+        }
+
+        .m-content {
+            width: 100%;
+        }
     }
 
-    /* Animation */
-    .m-reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-    .m-reveal.m-active { opacity: 1; transform: translateY(0); }
-
-    .bg-charcoal h2 { font-size: clamp(30px, 10vw, 50px); text-align: center; }
-    .m-content { width: 100%; }
-}
 
 
 }
