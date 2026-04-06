@@ -109,7 +109,7 @@ if (windowWidth >= 1100) {
             const data = projectData[idx];
             document.getElementById('p-title').innerText = data.title;
             document.getElementById('p-desc').innerText = data.desc;
-            document.querySelector('.p-num').innerText = data.num;
+            // document.querySelector('.p-num').innerText = data.num;
             document.getElementById('p-link').href = data.link;
 
             if (idx === 2) {
@@ -235,7 +235,7 @@ if (windowWidth >= 1100) {
                 const data = projectData[idx];
                 document.getElementById('p-title').innerText = data.title;
                 document.getElementById('p-desc').innerText = data.desc;
-                document.querySelector('.p-num').innerText = data.num;
+                // document.querySelector('.p-num').innerText = data.num;
                 document.getElementById('p-link').href = data.link;
                 document.getElementById('p-tags').innerHTML = data.tags.map(t => `<span class="tag-pill">${t}</span>`).join('');
                 container.style.opacity = 1;
@@ -338,14 +338,14 @@ if (windowWidth >= 1100) {
         }
     });
 
-    
+
     window.onload = () => {
         slide(0);
         updateProjectSection(0);
         swapExp(0);
     };
 
-} 
+}
 
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

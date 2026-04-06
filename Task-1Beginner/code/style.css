@@ -82,8 +82,7 @@ body {
             height: 100vh;
         }
 
-        .mobile-only,
-        .menu-toggle {
+        .mobile-only {
             display: none;
         }
 
@@ -239,11 +238,6 @@ body {
 
         .sayHello:hover {
             transform: translateY(-0.2vw);
-        }
-
-        /* --- IMAGE PADDING --- */
-        .imgOne {
-            padding-left: 20%;
         }
 
         /* Text is always visible on Widescreen */
