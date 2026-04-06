@@ -1328,16 +1328,14 @@ body {
         /* PROJECTS ------------------------------------------------------------------------------------- */
         /* --- MOBILE PROJECT ENGINE: FULL REPAIR --- */
 #m-projects.m-slide {
-    /* Reduced from 10vh to 2vh to pull the section up */
     padding-top: 2vh !important; 
-    
-    /* Keep these the same for scrolling functionality */
     height: auto !important;
     min-height: 100vh !important;
     display: block !important;
     position: relative !important;
     overflow: visible !important;
-    padding-bottom: 20vh !important;
+    /* REDUCED: From 20vh to 8vh to pull the Experience section up */
+    padding-bottom: 8vh !important; 
     opacity: 1 !important;
     transform: none !important;
 }
@@ -1470,23 +1468,24 @@ body {
         /* EXPERIENC ------------------------------------------------------------------------------------------------ */
         /* --- MOBILE CIRCUIT TIMELINE ENGINE --- */
 
-        #m-experience.m-slide {
-            /* Reduced from 12vh to 4vh to bring content up */
-            padding-top: 4vh !important;
-            padding-bottom: 12vh;
-            height: auto !important;
-            min-height: 100vh;
-            display: block !important;
-            background-color: #fff !important;
-        }
+#m-experience.m-slide {
+    /* Tightens the gap between Projects and Experience */
+    padding-top: 2vh !important; 
+    /* Reduced from 6vh to 3vh: The next section (About) will be visible immediately */
+    padding-bottom: 3vh !important; 
+    height: auto !important;
+    min-height: 80vh; /* Allowed to be shorter if content is compact */
+    display: block !important;
+    background-color: #fff !important;
+}
 
-        .m-section-title-dark {
-            font-size: 11vw;
-            line-height: 1;
-            color: #515151;
-            /* Reduced from 8vh to 4vh for tighter flow */
-            margin-bottom: 4vh;
-        }
+.m-section-title-dark {
+    font-size: 11vw;
+    line-height: 1;
+    color: #515151;
+    /* Reduced from 4vh to 2vh: Starts the timeline almost immediately */
+    margin-bottom: 1vh; 
+}
 
         .m-timeline-container {
             display: flex;
@@ -1583,16 +1582,36 @@ body {
         /* ABOUT SECTION ---------------------------------------------------------------------------------------------------- */
         /* --- MOBILE ABOUT & CONTACT ENGINE --- */
 
-        #m-about.m-slide {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            background-color: #515151 !important;
-            /* Your signature charcoal */
-            overflow: hidden;
-            position: relative;
-        }
+#m-about.m-slide {
+    /* Changed from 100vh to auto to eliminate the 'leap' between sections */
+    height: auto !important; 
+    min-height: 70vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    /* Reduced top padding to 4vh to pull content higher */
+    padding-top: 4vh !important;
+    padding-bottom: 10vh; /* Space for the footer/social overlay */
+    background-color: #515151 !important;
+    overflow: hidden;
+    position: relative;
+}
+
+.m-about-visual-bg {
+    position: absolute;
+    bottom: 0;
+    right: -15vw;
+    /* Scaled down height slightly to fit the tighter container */
+    height: 65vh; 
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 1;
+}
 
         /* SUBTLE BACKGROUND PORTRAIT LOGIC */
         .m-about-visual-bg {
