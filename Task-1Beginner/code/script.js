@@ -7,13 +7,12 @@ const windowWidth = window.innerWidth;
 // DESKTOP VIEW - 1100 and above
 if (windowWidth >= 1100) {
 
-    // The single "Brain" function for all movement and styling
+
     function slide(index) {
         currentIdx = index;
         const logo = document.querySelector('.logo');
         const navButtons = document.querySelectorAll('.nav-links button');
 
-        // Update Nav Highlights
         navButtons.forEach((btn, i) => {
             if (i === index) {
                 btn.classList.add('active-nav');
@@ -22,7 +21,6 @@ if (windowWidth >= 1100) {
             }
         });
 
-        // Handle Colors based on Even/Odd index
         if (currentIdx % 2 === 0) {
             logo.style.color = "#c9c9c9";
             navButtons[index].style.borderColor = "#515151";
@@ -33,7 +31,6 @@ if (windowWidth >= 1100) {
             navButtons[index].style.color = "#c9c9c9";
         }
 
-        // Set other buttons to the theme color
         navButtons.forEach((btn, i) => {
             if (i !== index) {
                 btn.style.color = (currentIdx % 2 === 0) ? "#515151" : "#c9c9c9";
@@ -48,7 +45,7 @@ if (windowWidth >= 1100) {
         rightWrapper.style.transform = `translateY(-${(slides - 1 - currentIdx) * 100}vh)`;
     }
 
-    // Unified Wheel Listener
+    // scroller
     window.addEventListener('wheel', (e) => {
         if (!isScrolling) {
             let targetIdx = currentIdx;
@@ -128,13 +125,11 @@ if (windowWidth >= 1100) {
     }
 
     // EXPERIENCE SECTION LOGIC ----------------------------------------------------
-    /* --- EXPERIENCE DATA & MULTI-SLIDESHOW ENGINE --- */
     let currentIdx = 0;
     const slides = 5;
     let isScrolling = false;
     const windowWidth = window.innerWidth;
 
-    // --- EXPERIENCE GLOBALS ---
     let slideshowInterval = null;
     let currentSubImg = 0;
     let currentMilestoneIdx = 0;
@@ -169,7 +164,6 @@ if (windowWidth >= 1100) {
                 "./../assets/Experience/stage-src.jpg",
                 "./../assets/Experience/team-src.jpg"
             ],
-            // Inside expMilestones[1] (SRC THEATRE)
             btn: `Watch Performance <img src='./../assets/yticon.png' alt='YouTube' class='yt-icon'> —>`,
             url: "https://www.youtube.com/watch?v=Q81t36LaJkc"
         },
@@ -217,7 +211,7 @@ if (windowWidth >= 1100) {
             }
         }, { passive: false });
 
-        // 2. PROJECT SECTION LOGIC
+        //PROJECT SECTION LOGIC
         const projectData = [
             { title: "Vision-Based Virtual UI", desc: "Real-time hand tracking using MediaPipe and OpenCV.", tags: ["Python", "OpenCV"], num: "01 / 03", link: "https://github.com/Dkachangal/AI-ML-with-Python" },
             { title: "Synthetic Script Generator", desc: "Converts digital text into realistic handwriting.", tags: ["Python", "KivyMD"], num: "02 / 03", link: "https://github.com/Dkachangal/Text-To-Handwriting" },
@@ -248,7 +242,7 @@ if (windowWidth >= 1100) {
             }, 400);
         }
 
-        // 3. EXPERIENCE SECTION LOGIC (THE SYNCED SLIDESHOW)
+        //EXPERIENCE SECTION LOGIC
         function updateDots(total, activeIdx) {
             const dotsContainer = document.getElementById('nav-dots-container');
             if (!dotsContainer) return;
@@ -321,7 +315,7 @@ if (windowWidth >= 1100) {
 
     }
 
-    // Manual arrow clicks (Global scope for HTML onclick)
+    // Manual arrow clicks 
     function manualMove(dir) {
         clearInterval(slideshowInterval);
         const data = expMilestones[currentMilestoneIdx];
@@ -344,14 +338,14 @@ if (windowWidth >= 1100) {
         }
     });
 
-    // Initialize Desktop state
+    
     window.onload = () => {
         slide(0);
         updateProjectSection(0);
         swapExp(0);
     };
 
-} // END OF DESKTOP IF
+} 
 
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
