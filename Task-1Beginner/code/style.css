@@ -1,4 +1,3 @@
-/* --- UNIVERSAL --- */
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +9,6 @@
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-weight: 700;
-    /* Use 400 for regular, 700-900 for bold */
     font-style: normal;
 }
 
@@ -38,9 +36,6 @@ body {
         display: none;
     }
 
-
-    /* .logo { font-weight: 900; font-size: 24px; font-family: "Fugaz One", serif; color: #c9c9c9;} */
-
     .navbar {
         position: fixed;
         top: 0;
@@ -49,12 +44,10 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        /* Scaled padding from 1.15% to ~1.25% */
         padding: 1.25% 2.2%;
     }
 
     .logo {
-        /* Scaled from 1.35vw to 1.46vw */
         font-size: 1.46vw;
         font-weight: 900;
         transition: color 0.3s ease;
@@ -67,24 +60,15 @@ body {
         cursor: pointer;
         font-weight: 700;
         text-transform: uppercase;
-
-        /* Scaled from 0.74vw to 0.8vw */
         font-size: 0.8vw;
-
-        /* Scaled from 0.45vw to 0.49vw */
         margin-left: 0.49vw;
-
-        /* Scaled padding for a more "clickable" look */
         padding: 0.33vw 0.92vw;
 
         transition: all 0.3s ease;
     }
 
-    /* The active state for the navigation buttons */
     .nav-links button.active-nav {
         border: 1px solid white;
-
-        /* Scaled from 1.12vw to 1.2vw */
         border-radius: 1.2vw;
 
         padding: 0.33vw 0.92vw;
@@ -179,18 +163,15 @@ body {
         /* --- TEXT SECTIONS --- */
         #Hi-I-am {
             font-family: "Playfair Display", serif;
-            /* 2.1rem (~33.6px) -> 1.75vw */
             font-size: 1.75vw;
             font-weight: 600;
             opacity: 0.8;
             margin-bottom: 2.6%;
-            /* Proportional spacing */
             text-align: left;
         }
 
         #dkName {
             font-family: "Playfair Display", serif;
-            /* 4rem (64px) -> 3.33vw */
             font-size: 3.33vw;
             margin-top: 5.2%;
             font-weight: 600;
@@ -213,24 +194,20 @@ body {
             position: absolute;
             width: 100%;
             padding-top: 7.8%;
-            /* Proportional to screen width */
             display: flex;
             align-items: center;
             margin-top: 0%;
-            /* 1rem -> 0.83vw */
             gap: 0.83vw;
         }
 
         /* --- SOCIAL ICON BUTTONS --- */
         .home-page-btns {
-            /* 2.1rem -> 1.75vw */
             width: 1.75vw;
             height: 1.75vw;
             transition: transform 0.5s ease;
         }
 
         .home-page-btns:hover {
-            /* -0.25rem -> -0.2vw */
             transform: translateY(-0.2vw);
         }
 
@@ -239,20 +216,15 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            /* 0.8rem -> 0.66vw */
             gap: 0.66vw;
-            /* 9rem -> 7.5vw */
             min-width: 7.5vw;
-            /* 0.5rem 1.2rem -> 0.42vw 1vw */
             padding: 0.42vw 1vw;
-            /* 2rem -> 1.66vw */
             border-radius: 1.66vw;
 
             background-color: #c9c9c9;
             border: 1px solid #c9c9c9;
             color: #515151;
             font-weight: 700;
-            /* 0.85rem -> 0.71vw */
             font-size: 0.71vw;
             cursor: pointer;
             white-space: nowrap;
@@ -260,7 +232,6 @@ body {
         }
 
         .sayHelloBtn {
-            /* 1.2rem -> 1vw */
             width: 1vw;
             height: auto;
             transition: transform 0.5s ease;
@@ -273,7 +244,6 @@ body {
         /* --- IMAGE PADDING --- */
         .imgOne {
             padding-left: 20%;
-            /* Already a percentage, keep as is! */
         }
 
         /* Text is always visible on Widescreen */
@@ -282,7 +252,6 @@ body {
             transform: none !important;
         }
 
-        /* Technnical Skills */
         /* --- TECH SECTION (LEFT) --- */
         .tech-info {
             text-align: left;
@@ -330,28 +299,23 @@ body {
         }
 
         /* --- THE SKILLS GRID (RIGHT) --- */
-        /* --- DESKTOP STAGGERED HEX GRID (2-1-2) --- */
+        /* --- DESKTOP HEXAGON GRID (2-1-2) --- */
         .skills-grid-vertical {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            /* Use a very tight gap so the negative margins handle the locking */
             gap: 0.5vw;
         }
 
         .hex-row {
             display: flex;
             gap: 1.5vw;
-            /* Horizontal space between hexes */
             justify-content: center;
         }
 
-        /* The Mobile-Style Interlock Logic for Desktop */
         .row-offset {
-            /* Pulls the middle hexagon UP into the top row's gap */
             margin-top: -3.5vw;
-            /* Pulls the bottom row UP into the middle hexagon's gap */
             margin-bottom: -3.5vw;
         }
 
@@ -359,11 +323,10 @@ body {
             margin-left: 38%;
         }
 
-        /* The Sparking Hexagon Engine (Desktop Scale) */
+        /* The Sparking Hexagon (Desktop) */
         .hex-skill {
             position: relative;
             width: 10.5vw;
-            /* Perfect size for the 2-1-2 vertical stack */
             height: 12.1vw;
             background: #1a1a1a;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
@@ -375,7 +338,7 @@ body {
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* THE SPARKING PERIMETER */
+        /* THE SPARKING ANIMATION*/
         .hex-skill::before {
             content: '';
             position: absolute;
@@ -401,7 +364,7 @@ body {
             transition: background 0.3s ease;
         }
 
-        /* Hover States for Desktop Interaction */
+        /* SKILL HOVER */
         .hex-skill:hover {
             transform: translateY(-0.5vw) scale(1.08);
             cursor: pointer;
@@ -409,7 +372,6 @@ body {
 
         .hex-skill:hover::before {
             animation-duration: 1.2s;
-            /* Speed up spark on hover */
             background: conic-gradient(transparent, #fff 5%, transparent 20%);
         }
 
@@ -464,23 +426,15 @@ body {
 
         /* PROJECT SECTION GIF */
         .gifFitter {
-            /* 1. Force the image to take up the full area of the card */
             width: 100%;
             height: 100%;
-
-            /* 2. Now 'contain' has a box to work with. 
-       It will fit the whole GIF inside without cropping anything. */
             object-fit: contain;
-
-            /* 3. This prevents the GIF from 'stretching' if it's too small */
             display: block;
             background-color: #1a1a1a;
-            /* Optional: matches your charcoal theme for any letterboxing */
         }
     }
 
     /* PROJECT SECTION-------------------------------------------------------------- */
-    /* --- PROJECT SECTION STYLES --- */
     .p-num {
         text-align: left;
         font-size: 0.8vw;
@@ -535,15 +489,11 @@ body {
     .p-actions {
         display: flex;
         flex-direction: column;
-        /* Forces vertical stacking */
         align-items: flex-start;
-        /* Aligns them to the left */
         gap: 1.5vh;
-        /* Space between the two links */
         margin-top: 4vh;
     }
 
-    /* Base style for BOTH buttons (shared look) */
     #p-link,
     #currencyConvertorLive {
         font-size: 0.9vw;
@@ -553,16 +503,13 @@ body {
         border-bottom: 2px solid #fff;
         padding-bottom: 5px;
         transition: 0.3s;
-        /* Remove individual margin-top since the container handles 'gap' now */
         margin-top: 0;
     }
 
-    /* Ensure the Live link stays hidden until JS triggers it */
     #currencyConvertorLive {
         display: none;
     }
 
-    /* Hover effects for both */
     #p-link:hover,
     #currencyConvertorLive:hover {
         opacity: 0.7;
@@ -570,6 +517,7 @@ body {
     }
 
     /* --- 3D CAROUSEL ENGINE --- */
+    /* SEEN */
     .carousel-container {
         position: relative;
         width: 100%;
@@ -723,7 +671,7 @@ body {
         transition: opacity 0.4s ease;
     }
 
-    /* --- RIGHT SIDE: GALLERY ENGINE --- */
+    /* --- RIGHT SIDE: GALLERY--- */
     .gallery-engine {
         display: flex;
         flex-direction: column;
@@ -775,7 +723,7 @@ body {
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     }
 
-    /* --- NAVIGATION OVERLAYS (PIPS & ARROWS) --- */
+    /* --- NAVIGATION OVERLAYS (PIPS) --- */
     .nav-overlay {
         position: absolute;
         inset: 0;
@@ -883,20 +831,16 @@ body {
     .yt-icon {
         display: inline-block;
         width: 1.2vw;
-        /* Scales with your 1920px baseline */
         height: auto;
         vertical-align: middle;
         margin: 0 0.4vw;
-        /* Space between text and arrow */
         filter: brightness(0) saturate(100%) invert(32%) sepia(0%) animate;
-        /* Matches your #515151 grey */
         transition: transform 0.3s ease;
     }
 
     .p-btn:hover .yt-icon {
         transform: scale(1.2);
         filter: none;
-        /* Shows original YouTube colors on hover if desired */
     }
 
     /* ABOUT CONTACT------------------------------------------------------------------------------------------ */
@@ -904,7 +848,6 @@ body {
     /* --- ABOUT & CONTACT 2026 AESTHETIC --- */
     .contact-left-final .content {
         padding-right: 45% !important;
-        /* Prevents text from hitting the diagonal line */
         text-align: left;
     }
 
@@ -946,27 +889,16 @@ body {
     }
 
     /* The Charcoal Disk (#515151) */
-    /* --- SCALED TO PERCENTAGE (1920x1080 Baseline) --- */
 
     .charcoal-disk {
         position: absolute;
-        /* Calculated: 3vh of 1080 is ~2.8% */
         bottom: 2.8%;
-        /* Calculated: 5vw of 1920 is ~5% */
         right: 17%;
         width: 40%;
         height: 13.8%;
-        /* Proportional to 15vh */
-
         border-radius: 50%;
-        /* Keep border in rem/px for sharpness, or 0.2% for total fluid */
         border: 0.2rem solid #515151;
-
-        /* COMBINED TRANSFORM: You had two separate ones; they must be one line 
-       to rotate AND move toward the screen (translateZ) */
         transform: rotateX(75deg) scaleX(-1) translateZ(-2.5vh);
-
-        /* 3D Thickness and Shadow using your #515151 brand color */
         box-shadow:
             0 1vh 0 #515151,
             0 3vh 5vh rgba(0, 0, 0, 0.15);
@@ -975,22 +907,13 @@ body {
 
     /* The Cutout - Grounded on Disk */
     .grounded-cutout {
-        /* Use height % to keep it relative to the container height */
         height: 94%;
         width: auto;
         object-fit: contain;
-
-        /* Pushes you further RIGHT to hit the disk center */
-        /* margin-right: 4vw converted to % */
         margin-right: 4%;
-
-        /* Nudges you DOWN to touch the surface perfectly */
-        /* margin-bottom: 4vh converted to % */
         margin-bottom: 3.7%;
 
         transform: scaleX(-1);
-        /* Keeps you looking at your vision */
-
         z-index: 20;
         position: relative;
         pointer-events: none;
@@ -1033,26 +956,20 @@ body {
             background: #fff;
         }
 
-        /* --- SECTION DIVIDERS --- ------------------------------*/
         .m-slide:not(:first-child) {
             border-top: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        /* If you want the line to be more visible on the white Home section: */
         #m-tech {
-            /* This is the line between Home (White) and Tech (Charcoal) */
             border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
         }
 
-        /* --- All Percentage/Fluid Units --- */
         .m-tagline {
-            /* Was 6vw, keeping it for 1:1 scaling */
             font-size: 6vw;
             margin-bottom: 2vh;
         }
 
         .m-name {
-            /* This is your "12% of screen width" setting */
             padding-top: 5%;
             font-size: 12vw;
             line-height: 1.1;
@@ -1060,13 +977,10 @@ body {
         }
 
         .m-title {
-            /* 4.5% of screen width */
-
             font-size: 4.5vw;
         }
 
         .m-hero-img-container {
-            /* Image takes up exactly 50% of the screen height */
             height: 50vh;
             width: 100%;
         }
@@ -1086,7 +1000,6 @@ body {
 
         .m-logo {
             font-family: "Fugaz One", serif;
-            /* 6% of the screen width */
             font-size: 6vw;
             color: #fff;
         }
@@ -1096,12 +1009,10 @@ body {
             position: fixed;
             top: 0;
             width: 100%;
-            /* 8% of the screen height */
             height: 8vh;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            /* 6% padding on the sides */
             padding: 0 6%;
             z-index: 2000;
             mix-blend-mode: difference;
@@ -1125,7 +1036,6 @@ body {
             color: #c9c9c9;
         }
 
-        /* Hero Section - The Final Fix for Short/Wide Screens */
         .m-hero {
             background-color: #fff;
             justify-content: flex-start;
@@ -1136,13 +1046,11 @@ body {
             position: relative;
             display: flex;
             flex-direction: column;
-            /* Prevent content from overflowing the section itself */
             overflow: hidden;
         }
 
         .m-tagline {
             font-family: "Playfair Display", serif;
-            /* Cap the size even lower for very short screens */
             font-size: clamp(20px, 8vw, 38px);
             margin-bottom: 1vh;
             color: #515151;
@@ -1152,7 +1060,6 @@ body {
 
         .m-name {
             font-family: "Playfair Display", serif;
-            /* Reduced max-cap to 100px to survive 600px height screens */
             font-size: clamp(40px, 16vw, 100px);
             line-height: 0.9;
             margin-bottom: 1.5vh;
@@ -1171,17 +1078,12 @@ body {
             margin-bottom: 2vh;
         }
 
-        /* --- THE SYSTEM FIX --- */
         .m-hero-img-container {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-
-            /* MODIFIED: If the screen is short (600px), 
-       the image shrinks to 35% to give text room. */
             height: clamp(200px, 35vh, 45vh);
-
             display: flex;
             justify-content: center;
             align-items: flex-end;
@@ -1191,7 +1093,6 @@ body {
         }
 
         .m-hero-img {
-            /* Force the image to stay contained */
             max-height: 100%;
             width: auto;
             object-fit: contain;
@@ -1202,143 +1103,138 @@ body {
 
         /* --- MOBILE TECH STACK (SPARKING HEXAGONS) --- */
 
-        /* --- MOBILE TECH STACK: SPREAD MESH ENGINE --- */
 
-#m-tech.m-slide {
-    /* Pulls section up while allowing it to be slightly longer */
-    padding-top: 5vh !important; 
-    padding-bottom: 8vh !important;
-    height: auto !important;
-    min-height: 75vh; /* Increased slightly for a longer section feel */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.m-tech-title {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(32px, 10vw, 50px);
-    color: #c9c9c9;
-    margin-bottom: 5vh; /* Standard gap from title to grid */
-    text-align: center;
-}
+        #m-tech.m-slide {
+            padding-top: 5vh !important;
+            padding-bottom: 8vh !important;
+            height: auto !important;
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-.hexagonMesh {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .m-tech-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(32px, 10vw, 50px);
+            color: #c9c9c9;
+            margin-bottom: 5vh;
+            text-align: center;
+        }
 
-.m-hex-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Increased gap to spread hexagons vertically */
-    gap: 4vw; 
-    width: 100%;
-}
+        .hexagonMesh {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.m-hex-row {
-    display: flex;
-    /* Increased gap to spread hexagons horizontally */
-    gap: 8vw; 
-    justify-content: center;
-}
+        .m-hex-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4vw;
+            width: 100%;
+        }
 
-/* Offset for the interlocking honeycomb effect on mobile */
-.m-row-offset {
-    /* Adjusted offset to account for the wider horizontal spread */
-    margin-top: -10vw;
-    margin-bottom: -10vw;
-}
+        .m-hex-row {
+            display: flex;
+            gap: 8vw;
+            justify-content: center;
+        }
 
-.m-hex-skill {
-    position: relative;
-    width: 32vw;
-    height: 36.8vw;
-    background: #1a1a1a;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    /* Keeps same snappy transition as desktop */
-    transition: transform 0.3s ease; 
-}
+        .m-row-offset {
+            margin-top: -10vw;
+            margin-bottom: -10vw;
+        }
 
-/* --- THE EXACT SAME ANIMATIONS --- */
+        .m-hex-skill {
+            position: relative;
+            width: 32vw;
+            height: 36.8vw;
+            background: #1a1a1a;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
 
-.m-hex-skill::before {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(transparent,
-            transparent,
-            #c9c9c9 2%,
-            #fff 5%,
-            #c9c9c9 8%,
-            transparent 15%);
-    animation: mSparkRotate 4s linear infinite;
-    z-index: 1;
-}
+        .m-hex-skill::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent,
+                    transparent,
+                    #c9c9c9 2%,
+                    #fff 5%,
+                    #c9c9c9 8%,
+                    transparent 15%);
+            animation: mSparkRotate 4s linear infinite;
+            z-index: 1;
+        }
 
-.m-hex-skill::after {
-    content: '';
-    position: absolute;
-    inset: 1.5px;
-    background: #282828;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    z-index: 2;
-}
+        .m-hex-skill::after {
+            content: '';
+            position: absolute;
+            inset: 1.5px;
+            background: #282828;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            z-index: 2;
+        }
 
-.m-hex-content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-}
+        .m-hex-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
 
-.m-h-text {
-    font-size: 3.8vw;
-    font-weight: 900;
-    color: #fff;
-    display: block;
-    margin-bottom: 0.5vh;
-}
+        .m-h-text {
+            font-size: 3.8vw;
+            font-weight: 900;
+            color: #fff;
+            display: block;
+            margin-bottom: 0.5vh;
+        }
 
-.m-h-sub {
-    font-size: 2.2vw;
-    color: rgba(201, 201, 201, 0.5);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 700;
-}
+        .m-h-sub {
+            font-size: 2.2vw;
+            color: rgba(201, 201, 201, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
 
-.m-special::before {
-    background: conic-gradient(transparent, #fff 5%, transparent 20%);
-    animation-duration: 2s;
-}
+        .m-special::before {
+            background: conic-gradient(transparent, #fff 5%, transparent 20%);
+            animation-duration: 2s;
+        }
 
-@keyframes mSparkRotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
+        @keyframes mSparkRotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
 
         /* PROJECTS ------------------------------------------------------------------------------------- */
-        /* --- MOBILE PROJECT ENGINE: FULL REPAIR --- */
-#m-projects.m-slide {
-    padding-top: 2vh !important; 
-    height: auto !important;
-    min-height: 100vh !important;
-    display: block !important;
-    position: relative !important;
-    overflow: visible !important;
-    /* REDUCED: From 20vh to 8vh to pull the Experience section up */
-    padding-bottom: 8vh !important; 
-    opacity: 1 !important;
-    transform: none !important;
-}
+        #m-projects.m-slide {
+            padding-top: 2vh !important;
+            height: auto !important;
+            min-height: 100vh !important;
+            display: block !important;
+            position: relative !important;
+            overflow: visible !important;
+            padding-bottom: 8vh !important;
+            opacity: 1 !important;
+            transform: none !important;
+        }
 
         .m-section-num {
             font-family: 'JetBrains Mono', monospace;
@@ -1350,28 +1246,24 @@ body {
             padding-left: 6vw;
         }
 
-.m-section-title {
-    font-size: 10vw;
-    line-height: 1.1;
-    /* Reduced margin-bottom to bring the first card even higher */
-    margin-bottom: 4vh; 
-    text-align: left !important;
-    padding-left: 6vw;
-    color: #fff;
-}
+        .m-section-title {
+            font-size: 10vw;
+            line-height: 1.1;
+            margin-bottom: 4vh;
+            text-align: left !important;
+            padding-left: 6vw;
+            color: #fff;
+        }
 
         .m-project-list {
-            /* 4. Natural Column Stacking */
             display: flex !important;
             flex-direction: column !important;
             gap: 10vh !important;
-            /* Large gap prevents visual overlap */
             width: 100%;
             padding: 0 6vw;
         }
 
         .m-project-card {
-            /* 5. Flow-based Positioning */
             position: relative !important;
             width: 100% !important;
             height: auto !important;
@@ -1381,12 +1273,10 @@ body {
             overflow: hidden;
         }
 
-        /* HIGH-IMPACT VIDEO DISPLAY */
         .m-card-media {
             position: relative;
             width: 100%;
             height: 48vh;
-            /* Optimized for full vertical GIF length */
             background: #111;
             overflow: hidden;
         }
@@ -1394,7 +1284,6 @@ body {
         .m-card-media img {
             width: 100%;
             height: 100%;
-            /* 'contain' prevents cropping the handwriting or CV logic */
             object-fit: contain;
             opacity: 0.85;
         }
@@ -1447,7 +1336,6 @@ body {
             font-family: 'JetBrains Mono', monospace;
             font-size: 3vw;
             color: #515151;
-            /* Your brand charcoal color */
             background: #c9c9c9;
             padding: 1.5vw 3.5vw;
             border-radius: 1vw;
@@ -1466,26 +1354,22 @@ body {
 
 
         /* EXPERIENC ------------------------------------------------------------------------------------------------ */
-        /* --- MOBILE CIRCUIT TIMELINE ENGINE --- */
 
-#m-experience.m-slide {
-    /* Tightens the gap between Projects and Experience */
-    padding-top: 2vh !important; 
-    /* Reduced from 6vh to 3vh: The next section (About) will be visible immediately */
-    padding-bottom: 3vh !important; 
-    height: auto !important;
-    min-height: 80vh; /* Allowed to be shorter if content is compact */
-    display: block !important;
-    background-color: #fff !important;
-}
+        #m-experience.m-slide {
+            padding-top: 2vh !important;
+            padding-bottom: 3vh !important;
+            height: auto !important;
+            min-height: 80vh;
+            display: block !important;
+            background-color: #fff !important;
+        }
 
-.m-section-title-dark {
-    font-size: 11vw;
-    line-height: 1;
-    color: #515151;
-    /* Reduced from 4vh to 2vh: Starts the timeline almost immediately */
-    margin-bottom: 1vh; 
-}
+        .m-section-title-dark {
+            font-size: 11vw;
+            line-height: 1;
+            color: #515151;
+            margin-bottom: 1vh;
+        }
 
         .m-timeline-container {
             display: flex;
@@ -1493,13 +1377,11 @@ body {
             width: 100%;
         }
 
-        /* Ensure the first milestone is tucked right under the title */
         .m-timeline-item {
             display: flex;
             gap: 4vw;
         }
 
-        /* THE CIRCUIT LOGIC */
         .m-timeline-meta {
             display: flex;
             flex-direction: column;
@@ -1523,11 +1405,9 @@ body {
             margin-top: -1vh;
         }
 
-        /* THE CONTENT CARDS */
         .m-timeline-card {
             flex: 1;
             padding-bottom: 8vh;
-            /* Space between milestones */
         }
 
         .m-exp-tag {
@@ -1580,52 +1460,45 @@ body {
 
 
         /* ABOUT SECTION ---------------------------------------------------------------------------------------------------- */
-        /* --- MOBILE ABOUT & CONTACT ENGINE --- */
 
-#m-about.m-slide {
-    /* Changed from 100vh to auto to eliminate the 'leap' between sections */
-    height: auto !important; 
-    min-height: 70vh; 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    /* Reduced top padding to 4vh to pull content higher */
-    padding-top: 4vh !important;
-    padding-bottom: 10vh; /* Space for the footer/social overlay */
-    background-color: #515151 !important;
-    overflow: hidden;
-    position: relative;
-}
+        #m-about.m-slide {
+            height: auto !important;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 4vh !important;
+            padding-bottom: 10vh;
+            background-color: #515151 !important;
+            overflow: hidden;
+            position: relative;
+        }
 
-.m-about-visual-bg {
-    position: absolute;
-    bottom: 0;
-    right: -15vw;
-    /* Scaled down height slightly to fit the tighter container */
-    height: 65vh; 
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    opacity: 0.15;
-    pointer-events: none;
-    z-index: 1;
-}
-
-        /* SUBTLE BACKGROUND PORTRAIT LOGIC */
         .m-about-visual-bg {
             position: absolute;
             bottom: 0;
             right: -15vw;
-            /* Pushed slightly off-screen for a modern look */
+            height: 65vh;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .m-about-visual-bg {
+            position: absolute;
+            bottom: 0;
+            right: -15vw;
             height: 80vh;
             width: 100%;
             display: flex;
             justify-content: flex-end;
             align-items: flex-end;
             opacity: 0.15;
-            /* Keeps text legible while showing the portrait */
             pointer-events: none;
             z-index: 1;
         }
@@ -1635,7 +1508,6 @@ body {
             width: auto;
             object-fit: contain;
             transform: scaleX(-1);
-            /* Flips portrait to face the text */
         }
 
         .m-about-text {
@@ -1682,20 +1554,14 @@ body {
             padding-top: 3vh;
         }
 
-
-
-
-        /* --- OPTIONAL: Orientation Fix --- 
-   If someone uses a phone in landscape (wide/short) */
+        /* WHEN THE MAX HEIGHT IS A LITTLE TOO LESS */
         @media (max-height: 620px) {
             .m-hero-img-container {
                 height: 30vh;
-                /* Shinks image even more if screen is tiny */
             }
 
             .m-name {
                 font-size: clamp(35px, 12vw, 80px);
-                /* Shrinks name if screen is tiny */
             }
         }
 
@@ -1718,7 +1584,6 @@ body {
             object-position: bottom;
         }
 
-        /* Fixed Overlays */
         .m-social-overlay {
             position: fixed;
             bottom: 4vh;
@@ -1745,21 +1610,6 @@ body {
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        /* Animation */
-        /* --- SNAPPY REVEAL ENGINE --- */
-        /* .m-reveal {
-            opacity: 0;
-
-            transform: translateY(10px);
-
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .m-reveal.m-active {
-            opacity: 1;
-            transform: translateY(0);
-        } */
-
         .bg-charcoal h2 {
             font-size: clamp(30px, 10vw, 50px);
             text-align: center;
@@ -1769,7 +1619,5 @@ body {
             width: 100%;
         }
     }
-
-
 
 }
