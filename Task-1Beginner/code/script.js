@@ -319,9 +319,6 @@ if (windowWidth >= 1100) {
             swapExp(0);
         };
 
-    } else {
-        // MOBILE VIEW
-        console.log("Mobile Engine Active");
     }
 
     // Manual arrow clicks (Global scope for HTML onclick)
@@ -356,8 +353,12 @@ if (windowWidth >= 1100) {
 
 } // END OF DESKTOP IF
 
+
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // MOBILE VIEW 
 else {
+
+    console.log("All mobile code is hrere!!!!");
     console.log("Mobile Engine Active");
 
     function initMobileScroll() {

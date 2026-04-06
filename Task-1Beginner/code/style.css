@@ -354,6 +354,7 @@ body {
             /* Pulls the bottom row UP into the middle hexagon's gap */
             margin-bottom: -3.5vw;
         }
+
         #skillBox {
             margin-left: 38%;
         }
@@ -901,107 +902,111 @@ body {
     /* ABOUT CONTACT------------------------------------------------------------------------------------------ */
 
     /* --- ABOUT & CONTACT 2026 AESTHETIC --- */
-.contact-left-final .content {
-    padding-right: 45% !important; /* Prevents text from hitting the diagonal line */
-    text-align: left;
-}
+    .contact-left-final .content {
+        padding-right: 45% !important;
+        /* Prevents text from hitting the diagonal line */
+        text-align: left;
+    }
 
-.final-btn-row {
-    display: flex;
-    gap: 1.5vw;
-    margin-top: 4vh;
-}
+    .final-btn-row {
+        display: flex;
+        gap: 1.5vw;
+        margin-top: 4vh;
+    }
 
-.pill-btn {
-    background-color: #C9C9C9 !important;
-    color: #515151 !important;
-    padding: 1vw 2.2vw !important;
-    border-radius: 5vw !important; 
-    font-size: 0.8vw;
-    font-weight: 800;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none !important;
-    transition: all 0.3s ease;
-}
+    .pill-btn {
+        background-color: #C9C9C9 !important;
+        color: #515151 !important;
+        padding: 1vw 2.2vw !important;
+        border-radius: 5vw !important;
+        font-size: 0.8vw;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: none !important;
+        transition: all 0.3s ease;
+    }
 
-.pill-btn:hover {
-    background: #c9c9c9 !important;
-    transform: translateY(-0.5vh);
-}
+    .pill-btn:hover {
+        background: #c9c9c9 !important;
+        transform: translateY(-0.5vh);
+    }
 
-/* Right Side Visual Control */
-.contact-right-visual {
-    background-color: white !important;
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    perspective: 120vh;
-}
+    /* Right Side Visual Control */
+    .contact-right-visual {
+        background-color: white !important;
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        perspective: 120vh;
+    }
 
-/* The Charcoal Disk (#515151) */
-/* --- SCALED TO PERCENTAGE (1920x1080 Baseline) --- */
+    /* The Charcoal Disk (#515151) */
+    /* --- SCALED TO PERCENTAGE (1920x1080 Baseline) --- */
 
-.charcoal-disk {
-    position: absolute;
-    /* Calculated: 3vh of 1080 is ~2.8% */
-    bottom: 2.8%;
-    /* Calculated: 5vw of 1920 is ~5% */
-    right: 17%;
-    width: 40%;
-    height: 13.8%; /* Proportional to 15vh */
-    
-    border-radius: 50%;
-    /* Keep border in rem/px for sharpness, or 0.2% for total fluid */
-    border: 0.2rem solid #515151; 
-    
-    /* COMBINED TRANSFORM: You had two separate ones; they must be one line 
+    .charcoal-disk {
+        position: absolute;
+        /* Calculated: 3vh of 1080 is ~2.8% */
+        bottom: 2.8%;
+        /* Calculated: 5vw of 1920 is ~5% */
+        right: 17%;
+        width: 40%;
+        height: 13.8%;
+        /* Proportional to 15vh */
+
+        border-radius: 50%;
+        /* Keep border in rem/px for sharpness, or 0.2% for total fluid */
+        border: 0.2rem solid #515151;
+
+        /* COMBINED TRANSFORM: You had two separate ones; they must be one line 
        to rotate AND move toward the screen (translateZ) */
-    transform: rotateX(75deg) scaleX(-1) translateZ(-2.5vh);
-    
-    /* 3D Thickness and Shadow using your #515151 brand color */
-    box-shadow: 
-        0 1vh 0 #515151, 
-        0 3vh 5vh rgba(0, 0, 0, 0.15);
-    z-index: -1;
-}
+        transform: rotateX(75deg) scaleX(-1) translateZ(-2.5vh);
 
-/* The Cutout - Grounded on Disk */
-.grounded-cutout {
-    /* Use height % to keep it relative to the container height */
-    height: 94%; 
-    width: auto;
-    object-fit: contain;
-    
-    /* Pushes you further RIGHT to hit the disk center */
-    /* margin-right: 4vw converted to % */
-    margin-right: 4%; 
-    
-    /* Nudges you DOWN to touch the surface perfectly */
-    /* margin-bottom: 4vh converted to % */
-    margin-bottom: 3.7%; 
-    
-    transform: scaleX(-1); /* Keeps you looking at your vision */
-    
-    z-index: 20;
-    position: relative;
-    pointer-events: none;
-}
-.grounded-cutout:hover {
-    body {
-        background-color: black;
+        /* 3D Thickness and Shadow using your #515151 brand color */
+        box-shadow:
+            0 1vh 0 #515151,
+            0 3vh 5vh rgba(0, 0, 0, 0.15);
+        z-index: -1;
+    }
+
+    /* The Cutout - Grounded on Disk */
+    .grounded-cutout {
+        /* Use height % to keep it relative to the container height */
+        height: 94%;
+        width: auto;
+        object-fit: contain;
+
+        /* Pushes you further RIGHT to hit the disk center */
+        /* margin-right: 4vw converted to % */
+        margin-right: 4%;
+
+        /* Nudges you DOWN to touch the surface perfectly */
+        /* margin-bottom: 4vh converted to % */
+        margin-bottom: 3.7%;
+
+        transform: scaleX(-1);
+        /* Keeps you looking at your vision */
+
+        z-index: 20;
+        position: relative;
+        pointer-events: none;
+    }
+
+    .grounded-cutout:hover {
+        body {
+            background-color: black;
+        }
     }
 }
-}
-
 
 
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+
 
 
 @media (max-width: 1100px) {
@@ -1028,11 +1033,8 @@ body {
             background: #fff;
         }
 
-        /* --- SECTION DIVIDERS --- */
+        /* --- SECTION DIVIDERS --- ------------------------------*/
         .m-slide:not(:first-child) {
-            /* 1px is best for a "hairline" look. 
-       rgba(255,255,255,0.1) creates a subtle white line that 
-       looks premium on the charcoal background. */
             border-top: 1px solid rgba(255, 255, 255, 0.15);
         }
 
@@ -1089,15 +1091,6 @@ body {
             color: #fff;
         }
 
-        .m-menu-toggle {
-            color: #fff;
-            /* 8% of the screen width */
-            font-size: 8vw;
-            cursor: pointer;
-            /* Remove any default button padding to keep it tight */
-            padding: 0;
-            line-height: 1;
-        }
 
         .mobile-header {
             position: fixed;
@@ -1205,122 +1198,473 @@ body {
             object-position: bottom;
         }
 
-        /* TECH STACK */
+        /* TECH STACK --------------------------------------------------------------------------------------------------------------*/
 
         /* --- MOBILE TECH STACK (SPARKING HEXAGONS) --- */
-        .m-tech-title {
-            font-family: "Playfair Display", serif;
-            font-size: clamp(32px, 10vw, 50px);
+
+        /* --- MOBILE TECH STACK: SPREAD MESH ENGINE --- */
+
+#m-tech.m-slide {
+    /* Pulls section up while allowing it to be slightly longer */
+    padding-top: 5vh !important; 
+    padding-bottom: 8vh !important;
+    height: auto !important;
+    min-height: 75vh; /* Increased slightly for a longer section feel */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.m-tech-title {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(32px, 10vw, 50px);
+    color: #c9c9c9;
+    margin-bottom: 5vh; /* Standard gap from title to grid */
+    text-align: center;
+}
+
+.hexagonMesh {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-hex-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Increased gap to spread hexagons vertically */
+    gap: 4vw; 
+    width: 100%;
+}
+
+.m-hex-row {
+    display: flex;
+    /* Increased gap to spread hexagons horizontally */
+    gap: 8vw; 
+    justify-content: center;
+}
+
+/* Offset for the interlocking honeycomb effect on mobile */
+.m-row-offset {
+    /* Adjusted offset to account for the wider horizontal spread */
+    margin-top: -10vw;
+    margin-bottom: -10vw;
+}
+
+.m-hex-skill {
+    position: relative;
+    width: 32vw;
+    height: 36.8vw;
+    background: #1a1a1a;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Keeps same snappy transition as desktop */
+    transition: transform 0.3s ease; 
+}
+
+/* --- THE EXACT SAME ANIMATIONS --- */
+
+.m-hex-skill::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(transparent,
+            transparent,
+            #c9c9c9 2%,
+            #fff 5%,
+            #c9c9c9 8%,
+            transparent 15%);
+    animation: mSparkRotate 4s linear infinite;
+    z-index: 1;
+}
+
+.m-hex-skill::after {
+    content: '';
+    position: absolute;
+    inset: 1.5px;
+    background: #282828;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: 2;
+}
+
+.m-hex-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.m-h-text {
+    font-size: 3.8vw;
+    font-weight: 900;
+    color: #fff;
+    display: block;
+    margin-bottom: 0.5vh;
+}
+
+.m-h-sub {
+    font-size: 2.2vw;
+    color: rgba(201, 201, 201, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+.m-special::before {
+    background: conic-gradient(transparent, #fff 5%, transparent 20%);
+    animation-duration: 2s;
+}
+
+@keyframes mSparkRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+        /* PROJECTS ------------------------------------------------------------------------------------- */
+        /* --- MOBILE PROJECT ENGINE: FULL REPAIR --- */
+#m-projects.m-slide {
+    /* Reduced from 10vh to 2vh to pull the section up */
+    padding-top: 2vh !important; 
+    
+    /* Keep these the same for scrolling functionality */
+    height: auto !important;
+    min-height: 100vh !important;
+    display: block !important;
+    position: relative !important;
+    overflow: visible !important;
+    padding-bottom: 20vh !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+        .m-section-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3.5vw;
             color: #c9c9c9;
-            margin-bottom: 5vh;
-            text-align: center;
+            opacity: 0.5;
+            display: block;
+            margin-bottom: 2vh;
+            padding-left: 6vw;
         }
 
-        .m-hex-grid {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2vw;
-            /* Tight vertical gap */
+.m-section-title {
+    font-size: 10vw;
+    line-height: 1.1;
+    /* Reduced margin-bottom to bring the first card even higher */
+    margin-bottom: 4vh; 
+    text-align: left !important;
+    padding-left: 6vw;
+    color: #fff;
+}
+
+        .m-project-list {
+            /* 4. Natural Column Stacking */
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10vh !important;
+            /* Large gap prevents visual overlap */
             width: 100%;
+            padding: 0 6vw;
         }
 
-        .m-hex-row {
-            display: flex;
-            gap: 4vw;
-            /* Horizontal gap between hexes */
-            justify-content: center;
-        }
-
-        /* Offset for the interlocking honeycomb effect on mobile */
-        .m-row-offset {
-            margin-top: -8vw;
-            margin-bottom: -8vw;
-        }
-
-        .m-hex-skill {
-            position: relative;
-            width: 32vw;
-            /* Scaled for mobile width */
-            height: 36.8vw;
-            /* Proportional 1:1.15 aspect ratio */
-            background: #1a1a1a;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .m-project-card {
+            /* 5. Flow-based Positioning */
+            position: relative !important;
+            width: 100% !important;
+            height: auto !important;
+            background: rgba(255, 255, 255, 0.03);
+            border: 0.1vh solid rgba(255, 255, 255, 0.1);
+            border-radius: 4vw;
             overflow: hidden;
         }
 
-        /* THE MOBILE SPARK */
-        .m-hex-skill::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(transparent,
-                    transparent,
-                    #c9c9c9 2%,
-                    #fff 5%,
-                    #c9c9c9 8%,
-                    transparent 15%);
-            animation: mSparkRotate 4s linear infinite;
-            z-index: 1;
-        }
-
-        /* THE INNER BODY */
-        .m-hex-skill::after {
-            content: '';
-            position: absolute;
-            inset: 1.5px;
-            /* Thinner border for mobile */
-            background: #282828;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            z-index: 2;
-        }
-
-        /* TEXT CONTENT */
-        .m-hex-content {
+        /* HIGH-IMPACT VIDEO DISPLAY */
+        .m-card-media {
             position: relative;
-            z-index: 10;
-            text-align: center;
+            width: 100%;
+            height: 48vh;
+            /* Optimized for full vertical GIF length */
+            background: #111;
+            overflow: hidden;
         }
 
-        .m-h-text {
-            font-size: 3.8vw;
+        .m-card-media img {
+            width: 100%;
+            height: 100%;
+            /* 'contain' prevents cropping the handwriting or CV logic */
+            object-fit: contain;
+            opacity: 0.85;
+        }
+
+        .m-card-tag {
+            position: absolute;
+            top: 4vw;
+            right: 4vw;
+            background: #fff;
+            color: #1a1a1a;
+            padding: 1.5vw 4vw;
+            font-size: 2.8vw;
             font-weight: 900;
-            color: #fff;
-            display: block;
-            margin-bottom: 0.5vh;
+            text-transform: uppercase;
+            border-radius: 1vw;
+            z-index: 5;
         }
 
-        .m-h-sub {
-            font-size: 2.2vw;
-            color: rgba(201, 201, 201, 0.5);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        .m-card-info {
+            padding: 6vw;
+        }
+
+        .m-card-info h3 {
+            font-size: 6.5vw;
+            color: #fff;
+            margin-bottom: 2vh;
+        }
+
+        .m-card-info p {
+            font-size: 4vw;
+            color: #c9c9c9;
+            opacity: 0.8;
+            line-height: 1.5;
+            margin-bottom: 4vh;
+        }
+
+        .m-card-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 3vh;
+        }
+
+        .m-card-stack {
+            display: flex;
+            gap: 2vw;
+            flex-wrap: wrap;
+        }
+
+        .m-card-stack span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3vw;
+            color: #515151;
+            /* Your brand charcoal color */
+            background: #c9c9c9;
+            padding: 1.5vw 3.5vw;
+            border-radius: 1vw;
             font-weight: 700;
         }
 
-        /* Highlight the "Special" hex (like OpenCV) */
-        .m-special::before {
-            background: conic-gradient(transparent,
-                    #fff 5%,
-                    transparent 20%);
-            animation-duration: 2s;
-            /* Faster spark for special skills */
+        .m-card-link {
+            font-size: 4.5vw;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 0.3vh solid #fff;
+            padding-bottom: 1vh;
+            align-self: flex-start;
         }
 
-        /* ANIMATION */
-        @keyframes mSparkRotate {
-            from {
-                transform: rotate(0deg);
-            }
 
-            to {
-                transform: rotate(360deg);
-            }
+        /* EXPERIENC ------------------------------------------------------------------------------------------------ */
+        /* --- MOBILE CIRCUIT TIMELINE ENGINE --- */
+
+        #m-experience.m-slide {
+            /* Reduced from 12vh to 4vh to bring content up */
+            padding-top: 4vh !important;
+            padding-bottom: 12vh;
+            height: auto !important;
+            min-height: 100vh;
+            display: block !important;
+            background-color: #fff !important;
         }
+
+        .m-section-title-dark {
+            font-size: 11vw;
+            line-height: 1;
+            color: #515151;
+            /* Reduced from 8vh to 4vh for tighter flow */
+            margin-bottom: 4vh;
+        }
+
+        .m-timeline-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        /* Ensure the first milestone is tucked right under the title */
+        .m-timeline-item {
+            display: flex;
+            gap: 4vw;
+        }
+
+        /* THE CIRCUIT LOGIC */
+        .m-timeline-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 8vw;
+        }
+
+        .m-timeline-dot {
+            width: 4vw;
+            height: 4vw;
+            background: #515151;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .m-timeline-line {
+            width: 0.6vw;
+            flex-grow: 1;
+            background: #515151;
+            opacity: 0.15;
+            margin-top: -1vh;
+        }
+
+        /* THE CONTENT CARDS */
+        .m-timeline-card {
+            flex: 1;
+            padding-bottom: 8vh;
+            /* Space between milestones */
+        }
+
+        .m-exp-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3vw;
+            color: #515151;
+            opacity: 0.6;
+            font-weight: 700;
+        }
+
+        .m-timeline-card h3 {
+            font-size: 7vw;
+            color: #1a1a1a;
+            margin: 1.5vh 0;
+            line-height: 1.1;
+        }
+
+        .m-exp-img-box {
+            width: 100%;
+            height: 30vh;
+            border-radius: 3vw;
+            overflow: hidden;
+            margin: 2vh 0;
+            background: #f0f0f0;
+        }
+
+        .m-exp-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+        }
+
+        .m-timeline-card p {
+            font-size: 4vw;
+            color: #515151;
+            line-height: 1.6;
+            margin-bottom: 3vh;
+        }
+
+        .m-exp-btn {
+            font-size: 4.2vw;
+            font-weight: 800;
+            color: #515151;
+            text-decoration: none;
+            border-bottom: 0.3vh solid #515151;
+            padding-bottom: 0.5vh;
+            display: inline-block;
+        }
+
+
+        /* ABOUT SECTION ---------------------------------------------------------------------------------------------------- */
+        /* --- MOBILE ABOUT & CONTACT ENGINE --- */
+
+        #m-about.m-slide {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: #515151 !important;
+            /* Your signature charcoal */
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* SUBTLE BACKGROUND PORTRAIT LOGIC */
+        .m-about-visual-bg {
+            position: absolute;
+            bottom: 0;
+            right: -15vw;
+            /* Pushed slightly off-screen for a modern look */
+            height: 80vh;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            opacity: 0.15;
+            /* Keeps text legible while showing the portrait */
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .m-bg-cutout {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+            transform: scaleX(-1);
+            /* Flips portrait to face the text */
+        }
+
+        .m-about-text {
+            font-size: 4.5vw;
+            line-height: 1.6;
+            color: #c9c9c9;
+            margin-bottom: 5vh;
+            max-width: 85%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .m-final-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5vh;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .m-pill-btn {
+            background: #c9c9c9 !important;
+            color: #515151 !important;
+            padding: 4vw 8vw !important;
+            border-radius: 50px !important;
+            font-size: 4vw;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none !important;
+        }
+
+        .m-pill-btn:active {
+            transform: scale(0.95);
+            background: #fff !important;
+        }
+
+        .m-footer-stamp {
+            margin-top: 10vh;
+            border-top: 0.1vh solid rgba(201, 201, 201, 0.1);
+            padding-top: 3vh;
+        }
+
+
+
 
         /* --- OPTIONAL: Orientation Fix --- 
    If someone uses a phone in landscape (wide/short) */
@@ -1383,16 +1727,19 @@ body {
         }
 
         /* Animation */
-        .m-reveal {
+        /* --- SNAPPY REVEAL ENGINE --- */
+        /* .m-reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
+
+            transform: translateY(10px);
+
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .m-reveal.m-active {
             opacity: 1;
             transform: translateY(0);
-        }
+        } */
 
         .bg-charcoal h2 {
             font-size: clamp(30px, 10vw, 50px);
