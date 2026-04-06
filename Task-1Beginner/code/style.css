@@ -354,6 +354,9 @@ body {
             /* Pulls the bottom row UP into the middle hexagon's gap */
             margin-bottom: -3.5vw;
         }
+        #skillBox {
+            margin-left: 38%;
+        }
 
         /* The Sparking Hexagon Engine (Desktop Scale) */
         .hex-skill {
